@@ -3,9 +3,18 @@ package locators;
 import org.openqa.selenium.By;
 
 public enum HomePageLocator implements Locator {
-    CREATE_ACCOUNT_BUTTON_INNER_PAGE(By.cssSelector(".inner_page a[href='/users/register/']")),
-    EMAIL_INPUT_INNER_PAGE(By.cssSelector("input[name='email']")),
-    SIGN_UP_BUTTON_INNER_PAGE(By.cssSelector("button[onclick='submitRegisterInterest()']")),
+    GET_STARTED_BUTTON_BANNER(By.cssSelector(".banner a[href='/users/register/']")),
+    PLAY_STORE_BUTTON_BANNER(By.cssSelector(".banner img[alt='playstore']")),
+    APPSTORE_BUTTON_BANNER(By.cssSelector(".banner img[alt='appstore']")),
+    INSTAGRAM_BUTTON_INTRODUCTION(By.cssSelector(".introduction .insta")),
+    INSTAGRAM_BUTTON_DOWNLOAD(By.cssSelector(".download .insta")),
+    FACEBOOK_BUTTON_INTRODUCTION(By.cssSelector(".introduction .facebook")),
+    FACEBOOK_BUTTON_DOWNLOAD(By.cssSelector(".download .facebook")),
+    ABOUT_CHALLENGES_MOTIVATION(By.cssSelector(".motivation [href='/challenge/about/']")),
+    TRANSFORMATIONS_BUTTON_MEMBER_TRANSFORMATIONS(By.cssSelector(".member_transformations [href='/transformations/']")),
+    EMAIL_INPUT_DAILY_EMAILS(By.cssSelector("input[name='email']")),
+    SIGN_UP_DAILY_EMAILS(By.cssSelector("#daily-button")),
+
 
     ;
 
