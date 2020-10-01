@@ -8,12 +8,18 @@ import org.testng.annotations.BeforeClass;
 
 public class JsaTestRunner {
     WebDriver driver;
+    String baseUrl = "https://www.jamessmithacademy.com/";
+
+    public WebDriver getDriver() {
+        return driver;
+    }
 
     @BeforeClass
     public void settingDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.get(baseUrl);
     }
 
     @AfterClass
