@@ -1,5 +1,6 @@
 package ui.smoke;
 
+import locators.GeneralFooterLocator;
 import locators.GeneralHeaderLocator;
 import locators.HomePageLocator;
 import locators.Locator;
@@ -30,5 +31,16 @@ public class HomeTest extends JsaTestRunner {
     @DataProvider
     public Object[] getHomePageLocators() {
         return HomePageLocator.values();
+    }
+
+    @Test(dataProvider = "getGeneralFooterLocators")
+    public void generalFooterTest(Locator locator) {
+        new JsaAssert(getDriver()).
+                checkCountOfElementByLocator(locator, 1);
+    }
+
+    @DataProvider
+    public Object[] getGeneralFooterLocators() {
+        return GeneralFooterLocator.values();
     }
 }
