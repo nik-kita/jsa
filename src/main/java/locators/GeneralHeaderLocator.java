@@ -20,7 +20,6 @@ public enum GeneralHeaderLocator implements Locator {
 
     GeneralHeaderLocator(By path) {
         this.path = path;
-
     }
 
     @Override

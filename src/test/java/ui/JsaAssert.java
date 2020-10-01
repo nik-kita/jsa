@@ -16,7 +16,7 @@ public class JsaAssert {
                 .findElements(locator.getPath())
                 .size();
 
-        String errorMessage = "WebElement: " + locator.name() +
+        String errorMessage = "\nWebElement: " + locator.name() +
                 "\nLocation: " + locator.getPath() +
                 "\nExpected numbers of elements: " + expectedElCount +
                 "\nBut actual: " + actualElCount;
