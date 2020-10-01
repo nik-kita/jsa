@@ -20,6 +20,7 @@ public enum HomeLocator implements Locator {
 
     HomeLocator(By path) {
         this.path = path;
+
     }
 
     @Override
