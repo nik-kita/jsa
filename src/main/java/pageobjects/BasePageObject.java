@@ -1,5 +1,6 @@
 package pageobjects;
 
+import locators.HomeLocator;
 import org.openqa.selenium.WebDriver;
 
 public abstract class BasePageObject {
@@ -7,5 +8,10 @@ public abstract class BasePageObject {
 
     public BasePageObject(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public HomePO goHome() {
+        driver.findElement(HomeLocator.JSA_LOGO.getPath()).click();
+        return new HomePO(driver);
     }
 }

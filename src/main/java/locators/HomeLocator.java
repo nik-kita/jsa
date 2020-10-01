@@ -2,7 +2,7 @@ package locators;
 
 import org.openqa.selenium.By;
 
-public enum MainHeaderLocator implements Locator {
+public enum HomeLocator implements Locator {
     JSA_LOGO(By.cssSelector("a[href='/'] img")),
 
 
@@ -10,7 +10,7 @@ public enum MainHeaderLocator implements Locator {
 
     private By path;
 
-    MainHeaderLocator(By path) {
+    HomeLocator(By path) {
         this.path = path;
     }
 
