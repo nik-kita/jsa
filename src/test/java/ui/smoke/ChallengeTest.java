@@ -2,12 +2,18 @@ package ui.smoke;
 
 import locators.ChallengePageLocator;
 import locators.Locator;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ui.JsaAssert;
 import ui.JsaTestRunner;
 
 public class ChallengeTest extends JsaTestRunner {
+
+    @BeforeClass
+    public void goChallengePage() {
+        welcome().goChallengePage();
+    }
 
     @Test(dataProvider = "getChallengePageLocators")
     public void challengePageTest(Locator locator) {
