@@ -2,7 +2,7 @@ package locators;
 
 import org.openqa.selenium.By;
 
-public enum HomeLocator implements Locator {
+public enum GeneralHeaderLocator implements Locator {
     JSA_LOGO(By.cssSelector("a[href='/'] img")),
     BOOK_LOGO(By.cssSelector(".nav a[href='/not-a-diet-book/'] img")),
     PRICING_HEADER_BUTTON(By.cssSelector(".nav a[href='/pricing/']")),
@@ -18,7 +18,7 @@ public enum HomeLocator implements Locator {
 
     private By path;
 
-    HomeLocator(By path) {
+    GeneralHeaderLocator(By path) {
         this.path = path;
 
     }

@@ -11,7 +11,7 @@ public class JsaAssert {
         this.driver = driver;
     }
 
-    public void checkCountOfElement(Locator locator, int expectedElCount) {
+    public void checkCountOfElementByLocator(Locator locator, int expectedElCount) {
         int actualElCount = driver
                 .findElements(locator.getPath())
                 .size();
@@ -22,9 +22,5 @@ public class JsaAssert {
                 "\nBut actual: " + actualElCount;
 
         Assert.assertEquals(actualElCount, expectedElCount, errorMessage);
-    }
-
-    public void isElementPresentAndUnique(Locator locator) {
-        checkCountOfElement(locator, 1);
     }
 }

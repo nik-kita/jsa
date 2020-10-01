@@ -1,6 +1,6 @@
 package ui.smoke;
 
-import locators.HomeLocator;
+import locators.GeneralHeaderLocator;
 import locators.Locator;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -9,13 +9,13 @@ import ui.JsaTestRunner;
 
 public class HomeTest extends JsaTestRunner {
 
-    @Test(testName = "Smoke test unique elements on Home page", dataProvider = "getHomeLocators")
-    public void homePageUniqueElements(Locator locator) {
-        new JsaAssert(getDriver()).isElementPresentAndUnique(locator);
+    @Test(dataProvider = "getHomeLocators")
+    public void generalHeaderTest(Locator locator) {
+        new JsaAssert(getDriver()).checkCountOfElementByLocator(locator, 1);
     }
 
     @DataProvider
     public Object[] getHomeLocators() {
-        return HomeLocator.values();
+        return GeneralHeaderLocator.values();
     }
 }
