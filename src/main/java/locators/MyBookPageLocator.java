@@ -3,9 +3,9 @@ package locators;
 import org.openqa.selenium.By;
 
 public enum MyBookPageLocator implements OnixLocator {
-    ORDER_NOW_BUTTON(By.cssSelector(".book-banner__order-button")),
+    ORDER_NOW_BUTTON(By.cssSelector(".book-banner__order-btn")),
     AMAZON_UNITED_KINGDOM_LINK(By.
-            xpath("//div/following-sibling::div//a[contains(@href, 'amazon')]")),
+            xpath("//div[contains(text(), 'Kingdom')]/following-sibling::div//a[contains(@href, 'amazon')]")),
     WHSMITHS_UNITED_KINGDOM_LINK(By.
             xpath("//div[contains(text(), 'Kingdom')]/following-sibling::div//a[contains(@href, 'whsmith')]")),
     APPLE_UNITED_KINGDOM_LINK(By.
@@ -27,9 +27,9 @@ public enum MyBookPageLocator implements OnixLocator {
     APPLE_AUDIO_AUSTRALIA_LINK(By.
                             xpath("//div[contains(text(), 'Australia')]/following-sibling::div//a[contains(@href, 'apple.com/au/a')]")),
     AMAZON_USA_LINK(By.
-            xpath("//div[contains(text(), 'USA')]/following-sibling::div//a[contains(@href, 'amazon')]")),
+            xpath("//div[contains(text(), 'USA')]/following-sibling::div//div[contains(text(), 'zon')]")),
     AUDIBLE_USA_LINK(By.
-            xpath("//div[contains(text(), 'USA')]/following-sibling::div//a[contains(@href, 'audible')]")),
+            xpath("//div[contains(text(), 'USA')]/following-sibling::div//div[contains(text(), 'book')]")),
     MIGHTY_APE_ZEALAND_LIND(By.
             xpath("//div[contains(text(), 'Zealand')]/following-sibling::div//a[contains(@href, 'ape')]")),
     EASON_IRELAND_LINK(By.xpath("//div[contains(text(), 'Ireland')]/following-sibling::div//a[contains(@href, 'easons')]"))
