@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2"
+          name="smoke"
+          parallel="classes"
+          thread-count="7">
+        <classes>
+            <class name="ui.smoke.HomeTest"/>
+            <class name="ui.smoke.BlogTest"/>
+            <class name="ui.smoke.LoginPageTest"/>
+            <class name="ui.smoke.ChallengeTest"/>
+            <class name="ui.smoke.MyBookTest"/>
+            <class name="ui.smoke.PricingTest"/>
+            <class name="ui.smoke.TransformationsTest"/>
+
+        </classes>
+    </test>
+</suite>
