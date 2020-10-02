@@ -1,7 +1,6 @@
 package pageobjects;
 
 import locators.GeneralHeaderLocator;
-import locators.HomePageLocator;
 import engine.OnixWebDriver;
 
 public class HomePO extends BasePageObject {
@@ -15,5 +14,19 @@ public class HomePO extends BasePageObject {
                 click();
 
         return new ChallengePO(driver);
+    }
+
+    public PricingPO goPricingPage() {
+        driver.
+                findElement(GeneralHeaderLocator.PRICING_HEADER_BUTTON).
+                click();
+        return new PricingPO(driver);
+    }
+
+    public TransformationsPO goTransformationsPage() {
+        driver.
+                findElement(GeneralHeaderLocator.TRANSFORMATIONS_HEADER_BUTTON).
+                click();
+        return new TransformationsPO(driver);
     }
 }
