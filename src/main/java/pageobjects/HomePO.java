@@ -29,4 +29,11 @@ public class HomePO extends BasePageObject {
                 click();
         return new TransformationsPO(driver);
     }
+
+    public MyBookPO goMyBookPage() {
+        driver.
+                findElement(GeneralHeaderLocator.BOOK_LOGO).
+                click();
+        return new MyBookPO(driver);
+    }
 }
