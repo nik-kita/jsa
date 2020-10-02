@@ -12,6 +12,7 @@ import pageobjects.HomePO;
 public class OnixTestRunner {
     protected OnixWebDriver driver;
     String baseUrl = "https://www.jamessmithacademy.com/";
+    //String baseUrl = "https://testing-jamessmith-academy.herokuapp.com/";
 
     public OnixWebDriver getDriver() {
         return driver;

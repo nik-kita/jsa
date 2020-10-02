@@ -1,4 +1,5 @@
 ####### My ignores ######
+credentials.properties
 Laboratory.java
 allure-results/
 

@@ -2,9 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2"
-          name="smoke"
-          parallel="classes"
-          thread-count="2">
+          name="smoke">
+<!--          parallel="classes"-->
+<!--          thread-count="2"-->
+
         <classes>
             <class name="ui.smoke.HomeTest"/>
             <class name="ui.smoke.BlogTest"/>
