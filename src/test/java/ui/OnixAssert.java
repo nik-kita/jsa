@@ -16,10 +16,9 @@ public class OnixAssert {
                 .findElements(locator)
                 .size();
 
-        String errorMessage = "\nWebElement: " + locator.name() +
+        String errorMessage = "\n\nWebElement: " + locator.name() +
                 "\nLocation: " + locator.getPath() +
-                "\nExpected numbers of elements: " + expectedElCount +
-                "\nBut actual: " + actualElCount;
+                "\n=== NUMBER OF ELEMENTS ===";
 
         Assert.assertEquals(actualElCount, expectedElCount, errorMessage);
     }
