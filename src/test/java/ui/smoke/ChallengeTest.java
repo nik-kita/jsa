@@ -1,14 +1,14 @@
 package ui.smoke;
 
 import locators.ChallengePageLocator;
-import locators.Locator;
+import locators.OnixLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import ui.JsaAssert;
-import ui.JsaTestRunner;
+import ui.OnixAssert;
+import ui.OnixTestRunner;
 
-public class ChallengeTest extends JsaTestRunner {
+public class ChallengeTest extends OnixTestRunner {
 
     @BeforeClass
     public void goChallengePage() {
@@ -16,8 +16,8 @@ public class ChallengeTest extends JsaTestRunner {
     }
 
     @Test(dataProvider = "getChallengePageLocators")
-    public void challengePageTest(Locator locator) {
-        new JsaAssert(getDriver()).
+    public void challengePageTest(OnixLocator locator) {
+        new OnixAssert(getDriver()).
                 checkCountOfElementByLocator(locator, 1);
     }
 

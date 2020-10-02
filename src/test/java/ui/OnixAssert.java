@@ -1,19 +1,19 @@
 package ui;
 
-import locators.Locator;
-import org.openqa.selenium.WebDriver;
+import locators.OnixLocator;
+import engine.OnixWebDriver;
 import org.testng.Assert;
 
-public class JsaAssert {
-    WebDriver driver;
+public class OnixAssert {
+    OnixWebDriver driver;
 
-    public JsaAssert(WebDriver driver) {
+    public OnixAssert(OnixWebDriver driver) {
         this.driver = driver;
     }
 
-    public void checkCountOfElementByLocator(Locator locator, int expectedElCount) {
+    public void checkCountOfElementByLocator(OnixLocator locator, int expectedElCount) {
         int actualElCount = driver
-                .findElements(locator.getPath())
+                .findElements(locator)
                 .size();
 
         String errorMessage = "\nWebElement: " + locator.name() +

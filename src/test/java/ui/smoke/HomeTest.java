@@ -3,14 +3,14 @@ package ui.smoke;
 import locators.GeneralFooterLocator;
 import locators.GeneralHeaderLocator;
 import locators.HomePageLocator;
-import locators.Locator;
+import locators.OnixLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import ui.JsaAssert;
-import ui.JsaTestRunner;
+import ui.OnixAssert;
+import ui.OnixTestRunner;
 
-public class HomeTest extends JsaTestRunner {
+public class HomeTest extends OnixTestRunner {
 
     @BeforeClass
     public void goHomePage() {
@@ -18,9 +18,9 @@ public class HomeTest extends JsaTestRunner {
     }
 
     @Test(dataProvider = "getGeneralHeaderLocators")
-    public void generalHeaderTest(Locator locator) {
+    public void generalHeaderTest(OnixLocator locator) {
         welcome();
-        new JsaAssert(getDriver()).
+        new OnixAssert(getDriver()).
                 checkCountOfElementByLocator(locator, 1);
     }
 
@@ -30,8 +30,8 @@ public class HomeTest extends JsaTestRunner {
     }
 
     @Test(dataProvider = "getHomePageLocators")
-    public void homePageTest(Locator locator) {
-        new JsaAssert(getDriver()).
+    public void homePageTest(OnixLocator locator) {
+        new OnixAssert(getDriver()).
                 checkCountOfElementByLocator(locator, 1);
     }
 
@@ -41,8 +41,8 @@ public class HomeTest extends JsaTestRunner {
     }
 
     @Test(dataProvider = "getGeneralFooterLocators")
-    public void generalFooterTest(Locator locator) {
-        new JsaAssert(getDriver()).
+    public void generalFooterTest(OnixLocator locator) {
+        new OnixAssert(getDriver()).
                 checkCountOfElementByLocator(locator, 1);
     }
 

@@ -1,17 +1,17 @@
 package pageobjects;
 
 import locators.GeneralHeaderLocator;
-import org.openqa.selenium.WebDriver;
+import engine.OnixWebDriver;
 
 public abstract class BasePageObject {
-    WebDriver driver;
+    OnixWebDriver driver;
 
-    public BasePageObject(WebDriver driver) {
+    public BasePageObject(OnixWebDriver driver) {
         this.driver = driver;
     }
 
     public HomePO goHome() {
-        driver.findElement(GeneralHeaderLocator.JSA_LOGO.getPath()).click();
+        driver.findElement(GeneralHeaderLocator.JSA_LOGO).click();
         return new HomePO(driver);
     }
 }

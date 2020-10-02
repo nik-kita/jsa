@@ -2,7 +2,7 @@ package locators;
 
 import org.openqa.selenium.By;
 
-public enum GeneralFooterLocator implements Locator {
+public enum GeneralFooterLocator implements OnixLocator {
     JSA_LOGO(By.cssSelector("footer .logo")),
     TERMS_OF_SERVICE_LINK(By.cssSelector(".company [href='/terms/']")),
     COOKIES_POLICY_LINK(By.cssSelector(".company [href='/cookies-policy/']")),

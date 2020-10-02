@@ -2,16 +2,16 @@ package pageobjects;
 
 import locators.GeneralHeaderLocator;
 import locators.HomePageLocator;
-import org.openqa.selenium.WebDriver;
+import engine.OnixWebDriver;
 
 public class HomePO extends BasePageObject {
-    public HomePO(WebDriver driver) {
+    public HomePO(OnixWebDriver driver) {
         super(driver);
     }
 
     public ChallengePO goChallengePage() {
         driver.
-                findElement(GeneralHeaderLocator.CHALLENGE_HEADER_BUTTON.getPath()).
+                findElement(GeneralHeaderLocator.CHALLENGE_HEADER_BUTTON).
                 click();
 
         return new ChallengePO(driver);

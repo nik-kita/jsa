@@ -2,7 +2,7 @@ package locators;
 
 import org.openqa.selenium.By;
 
-public enum GeneralHeaderLocator implements Locator {
+public enum GeneralHeaderLocator implements OnixLocator {
     JSA_LOGO(By.cssSelector("a[href='/'] img")),
     BOOK_LOGO(By.cssSelector(".nav a[href='/not-a-diet-book/'] img")),
     PRICING_HEADER_BUTTON(By.cssSelector(".nav a[href='/pricing/']")),

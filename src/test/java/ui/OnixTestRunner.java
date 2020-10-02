@@ -1,5 +1,6 @@
 package ui;
 
+import engine.OnixWebDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,19 +9,20 @@ import org.testng.annotations.BeforeClass;
 import pageobjects.ChallengePO;
 import pageobjects.HomePO;
 
-public class JsaTestRunner {
-    WebDriver driver;
+public class OnixTestRunner {
+    OnixWebDriver driver;
     String baseUrl = "https://www.jamessmithacademy.com/";
 
-    public WebDriver getDriver() {
+    public OnixWebDriver getDriver() {
         return driver;
     }
 
     @BeforeClass
     public void settingDriver() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        WebDriver chrome = new ChromeDriver();
+        chrome.manage().window().maximize();
+        driver = new OnixWebDriver(chrome);
     }
 
     @AfterClass
