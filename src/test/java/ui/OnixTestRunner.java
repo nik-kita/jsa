@@ -10,7 +10,7 @@ import pageobjects.ChallengePO;
 import pageobjects.HomePO;
 
 public class OnixTestRunner {
-    OnixWebDriver driver;
+    protected OnixWebDriver driver;
     String baseUrl = "https://www.jamessmithacademy.com/";
 
     public OnixWebDriver getDriver() {

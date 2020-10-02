@@ -18,6 +18,10 @@ public class OnixWebDriver {
         return new OnixWebElement((driver.findElement(locator.getPath())));
     }
 
+    public WebDriver getSeleniumDriver() {
+        return driver;
+    }
+
     public List<OnixWebElement> findElements(OnixLocator locator) {
         List<OnixWebElement> result = new ArrayList<>();
         for(WebElement e : driver.findElements(locator.getPath())) {
@@ -33,4 +37,5 @@ public class OnixWebDriver {
     public void quit() {
         driver.quit();
     }
+
 }
