@@ -2,6 +2,7 @@ package pageobjects;
 
 import locators.GeneralHeaderLocator;
 import engine.OnixWebDriver;
+import locators.JoinNowPageLocator;
 import locators.LoginPageLocator;
 import pageobjects.blog.BlogPO;
 
@@ -43,5 +44,10 @@ public class HomePO extends BasePageObject {
     public LoginPO goLoginPage() {
         driver.findElement(GeneralHeaderLocator.LOGIN_HEADER_BUTTON).click();
         return new LoginPO(driver);
+    }
+
+    public JoinNowPO goJoinNowPage() {
+        driver.findElement(GeneralHeaderLocator.JOIN_NOW_HEADER_BUTTON).click();
+        return new JoinNowPO(driver);
     }
 }
