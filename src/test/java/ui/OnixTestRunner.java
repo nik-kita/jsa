@@ -9,6 +9,8 @@ import org.testng.annotations.BeforeClass;
 import pageobjects.ChallengePO;
 import pageobjects.HomePO;
 
+import java.util.concurrent.TimeUnit;
+
 public class OnixTestRunner {
     protected OnixWebDriver driver;
     String baseUrl = "https://www.jamessmithacademy.com/";
@@ -23,6 +25,7 @@ public class OnixTestRunner {
         WebDriverManager.chromedriver().setup();
         WebDriver chrome = new ChromeDriver();
         chrome.manage().window().maximize();
+        chrome.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver = new OnixWebDriver(chrome);
     }
 

@@ -14,7 +14,6 @@ public class TransformationsTest extends OnixTestRunner {
         welcome().goTransformationsPage();
     }
 
-    //TODO
     @Test(dataProvider = "getTransformationsLocators")
     public void transformationsTest(OnixLocator locator) {
         new OnixAssert(getDriver())
