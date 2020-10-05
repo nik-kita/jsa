@@ -11,20 +11,20 @@ import java.util.Map;
 
 public class OnixWebDriver {
     private WebDriver driver;
-    private Map<String, Boolean> checkSettings;
+    private Map<String, Boolean> onixSettings;
 
     public OnixWebDriver(WebDriver driver) {
-        this.checkSettings = new HashMap<>();
+        this.onixSettings = new HashMap<>();
         this.driver = driver;
     }
 
     public void setSetting(String setting, Boolean status) {
-        checkSettings.put(setting, status);
+        onixSettings.put(setting, status);
     }
 
     public boolean checkSetting(String setting) {
-        if(checkSettings.containsKey(setting)) {
-            return checkSettings.get(setting);
+        if(onixSettings.containsKey(setting)) {
+            return onixSettings.get(setting);
         }
         return false;
     }

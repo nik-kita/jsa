@@ -9,7 +9,6 @@ public abstract class BasePageObject {
 
     public BasePageObject(OnixWebDriver driver) {
         this.driver = driver;
-        JsaCookies.acceptIfCookiesPresent(driver);
     }
 
     public HomePO goHome() {

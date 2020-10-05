@@ -5,10 +5,12 @@ import engine.OnixWebDriver;
 import locators.JoinNowPageLocator;
 import locators.LoginPageLocator;
 import pageobjects.blog.BlogPO;
+import popups.JsaCookies;
 
 public class HomePO extends BasePageObject {
     public HomePO(OnixWebDriver driver) {
         super(driver);
+        JsaCookies.acceptIfCookiesPresent(driver);
     }
 
     public ChallengePO goChallengePage() {
