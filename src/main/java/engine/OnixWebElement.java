@@ -12,4 +12,8 @@ public class OnixWebElement {
     public void click() {
         element.click();
     }
+
+    public void sendKeys(CharSequence keysToSend) {
+        element.sendKeys(keysToSend);
+    }
 }
