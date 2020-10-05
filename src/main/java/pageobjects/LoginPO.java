@@ -4,6 +4,7 @@ import data.User;
 import engine.OnixWebDriver;
 import engine.OnixWebElement;
 import locators.LoginPageLocator;
+import pageobjects.login.HomeLoginModePO;
 
 public class LoginPO {
     OnixWebDriver driver;
@@ -36,10 +37,11 @@ public class LoginPO {
         getPasswordInput().sendKeys(password);
     }
 
-    public void login(User validUser) {
+    public HomeLoginModePO login(User validUser) {
         fillUserInput(validUser.getName());
         fillPasswordInput(validUser.getPassword());
         getSubmitButton().click();
+        return new HomeLoginModePO(driver);
     }
 
 

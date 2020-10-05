@@ -14,7 +14,12 @@ public class LoginTest extends OnixTestRunner {
 
     @Test
     public void testLogin() {
-        new LoginPO(driver).login(User.getValidUser());
+        User user = User.getValidUser();
+        System.out.println("=======================================");
+        System.out.println(user.getPassword());
+        user.getName();
+        System.out.println("=======================================");
+        new LoginPO(driver).login(user);
         try {
             Thread.sleep(1000000);
         } catch (InterruptedException e) {
