@@ -5,7 +5,7 @@ import engine.OnixWebDriver;
 import popups.JsaCookies;
 
 public abstract class BasePageObject {
-    OnixWebDriver driver;
+    protected OnixWebDriver driver;
 
     public BasePageObject(OnixWebDriver driver) {
         this.driver = driver;
