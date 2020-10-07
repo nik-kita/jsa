@@ -4,6 +4,7 @@ import data.User;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageobjects.LoginPO;
+import shorthands.RouteHacks;
 import ui.OnixTestRunner;
 
 public class LoginTest extends OnixTestRunner {
@@ -15,15 +16,8 @@ public class LoginTest extends OnixTestRunner {
     @Test
     public void testLogin() {
         User user = User.getValidUser();
-        System.out.println("=======================================");
-        System.out.println(user.getPassword());
-        user.getName();
-        System.out.println("=======================================");
         new LoginPO(driver).login(user);
-        try {
-            Thread.sleep(1000000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
+
+
 }

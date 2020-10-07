@@ -13,8 +13,9 @@ import java.util.concurrent.TimeUnit;
 
 public class OnixTestRunner {
     protected OnixWebDriver driver;
+//    String baseUrl = "http://127.0.0.1:8000/";
     String baseUrl = "https://www.jamessmithacademy.com/";
-    //String baseUrl = "https://testing-jamessmith-academy.herokuapp.com/";
+//    String baseUrl = "https://testing-jamessmith-academy.herokuapp.com/";
 
     public OnixWebDriver getDriver() {
         return driver;
