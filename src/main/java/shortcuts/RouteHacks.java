@@ -1,4 +1,4 @@
-package shorthands;
+package shortcuts;
 
 import data.User;
 import engine.OnixWebDriver;
