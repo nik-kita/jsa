@@ -15,8 +15,8 @@ public class HomeLoginModePO extends BaseLoginModePageObject {
         return new UserCabinetDropdownPO(driver);
     }
 
-    public MainPO goMainPage() {
+    public MainLoginModePO goMainPage() {
         driver.findElement(GeneralHeaderLoginModeLocator.JSA_LOGO).click();
-        return new MainPO(driver);
+        return new MainLoginModePO(driver);
     }
 }

@@ -35,8 +35,10 @@ public class WS extends OnixTestRunner {
         mainPO.goLoginPage()
                 .login(User.getValidUser())
                 .goMainPage()
-                .goPricingPage();
-        //TODO
+                .goPricingPage()
+                .goPricingPlans()
+                .clickBlocksButton();
+
     }
 
 

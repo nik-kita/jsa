@@ -18,7 +18,7 @@ public class BaseLoginModePageObject extends BasePageObject {
     }
 
     @Override
-    public BasePageObject goPricingPage() {
+    public PricingLoginModePO goPricingPage() {
         driver.findElement(GeneralHeaderLoginModeLocator.PRICING_HEADER_BUTTON).click();
         return new PricingLoginModePO(driver);
     }

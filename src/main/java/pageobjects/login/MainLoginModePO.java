@@ -12,4 +12,5 @@ public class MainLoginModePO extends BaseLoginModePageObject {
         driver.findElement(GeneralHeaderLoginModeLocator.TO_USER_HOME_CORNER_LINK).click();
         return new HomeLoginModePO(driver);
     }
+
 }

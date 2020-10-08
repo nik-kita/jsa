@@ -16,16 +16,13 @@ public class PricingTest extends OnixTestRunner {
     }
 
     @Test(dataProvider = "getPricingLocators")
-    public void pricingTest(OnixLocator locator, int expectedCount) {
+    public void pricingTest(OnixLocator locator) {
         new OnixAssert(getDriver()).
-                checkCountOfElementByLocator(locator, expectedCount);
+                checkCountOfElementByLocator(locator, 1);
     }
 
     @DataProvider
-    public Object[][] getPricingLocators() {
-        return new Object[][]{
-                {PricingPageLocator.SUBSCRIPTIONS_OR_BLOCK_SWITCHER, 1},
-                {PricingPageLocator.GET_STARTED_LINKS, 4}
-        };
+    public Object[] getPricingLocators() {
+        return PricingPageLocator.values();
     }
 }
