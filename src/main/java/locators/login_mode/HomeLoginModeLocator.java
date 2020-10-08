@@ -13,6 +13,13 @@ public enum HomeLoginModeLocator implements OnixLocator {
     CHALLENGE_DIV_LINK(By.cssSelector("[href='#/home/challenges']")),
     UPGRADE_TO_ACCESS_BTN(By.cssSelector(".facebook_group [href='/users/pricing/']")),
     SUPPORT_BUTTON(By.xpath("//button[contains(text(), 'Support')]")),
+    JSA_LOGO(By.xpath("//a[@href='/']")),
+    HOME(By.cssSelector("#navbar [href='#/home']")),
+    WORKOUTS(By.cssSelector("#navbar [href='#/workouts']")),
+    LEARN(By.cssSelector("#navbar #coaching")),
+    NUTRITION(By.cssSelector("#navbar #nutrition")),
+    MY_CABINET_DROPDOWN(By.id("navbarDropdownMenuLink")),
+
 
     ;
 
@@ -25,5 +32,26 @@ public enum HomeLoginModeLocator implements OnixLocator {
     @Override
     public By getPath() {
         return path;
+    }
+
+    public enum UserCabinetLocator implements OnixLocator {
+        ACCOUNT(By.cssSelector(".dropdown-menu [href='/users/account']")),
+        PRICING(By.cssSelector(".dropdown-menu [href='/users/pricing/']")),
+        FAQs(By.xpath("//a[contains(text(), 'FAQs')]")),
+        LOG_OUT(By.cssSelector("[href='/accounts/logout']"))
+
+
+        ;
+
+        private By path;
+
+        UserCabinetLocator(By path) {
+            this.path = path;
+        }
+
+        @Override
+        public By getPath() {
+            return path;
+        }
     }
 }

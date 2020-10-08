@@ -18,14 +18,15 @@ public class HomeLoginModeTest extends JsaLoginBaseTestRunner {
         homeLoginModePO = login();
     }
 
-    @Test(dataProvider = "getGeneralHeaderLoginLocators")
-    public void generalHeaderLoginModeTest(OnixLocator locator) {
+
+    @Test(dataProvider = "getHomeLoginModeLocators")
+    public void homeLoginModeTest(OnixLocator locator) {
         new OnixAssert(driver).checkCountOfElementByLocator(locator, 1);
     }
 
     @DataProvider
-    public Object[] getGeneralHeaderLoginLocators() {
-        return GeneralHeaderLoginModeLocator.values();
+    public Object[] getHomeLoginModeLocators() {
+        return HomeLoginModeLocator.values();
     }
 
     @Test(dataProvider = "getUserCabinetDropdownLocators")
@@ -36,17 +37,7 @@ public class HomeLoginModeTest extends JsaLoginBaseTestRunner {
 
     @DataProvider
     public Object[] getUserCabinetDropdownLocators() {
-        return GeneralHeaderLoginModeLocator.UserCabinetLocator.values();
-    }
-
-    @Test(dataProvider = "getHomeLoginModeLocators")
-    public void homeLoginModeTest(OnixLocator locator) {
-        new OnixAssert(driver).checkCountOfElementByLocator(locator, 1);
-    }
-
-    @DataProvider
-    public Object[] getHomeLoginModeLocators() {
-        return HomeLoginModeLocator.values();
+        return HomeLoginModeLocator.UserCabinetLocator.values();
     }
 
 
