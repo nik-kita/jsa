@@ -7,8 +7,8 @@ import locators.LoginPageLocator;
 import pageobjects.blog.BlogPO;
 import popups.JsaCookies;
 
-public class HomePO extends BasePageObject {
-    public HomePO(OnixWebDriver driver) {
+public class MainPO extends BaseLogoutModePageObject {
+    public MainPO(OnixWebDriver driver) {
         super(driver);
         JsaCookies.acceptIfCookiesPresent(driver);
     }

@@ -1,11 +1,9 @@
 package pageobjects;
 
 import engine.OnixWebDriver;
-import org.openqa.selenium.WebDriver;
 
-public class JoinNowPO {
-    OnixWebDriver driver;
+public class JoinNowPO extends BaseLogoutModePageObject {
     public JoinNowPO(OnixWebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 }

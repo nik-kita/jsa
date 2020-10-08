@@ -2,11 +2,11 @@ package shortcuts;
 
 import data.User;
 import engine.OnixWebDriver;
-import pageobjects.BasePageObject;
+import pageobjects.BaseLogoutModePageObject;
 import pageobjects.LoginPO;
 import pageobjects.login.HomeLoginModePO;
 
-public class RouteHacks extends BasePageObject {
+public class RouteHacks extends BaseLogoutModePageObject {
     OnixWebDriver driver;
     String loginEndPoint = "users/login/";
 

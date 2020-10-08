@@ -6,15 +6,16 @@ import engine.OnixWebElement;
 import locators.LoginPageLocator;
 import pageobjects.login.HomeLoginModePO;
 
-public class LoginPO {
-    OnixWebDriver driver;
+public class LoginPO extends BaseLogoutModePageObject {
+
+
     public LoginPO(OnixWebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
-    public HomePO goHomePage() {
+    public MainPO goHomePage() {
         driver.findElement(LoginPageLocator.JSA_LOGO).click();
-        return new HomePO(driver);
+        return new MainPO(driver);
     }
 
     private OnixWebElement getUserInput() {

@@ -11,8 +11,5 @@ public abstract class BasePageObject {
         this.driver = driver;
     }
 
-    public HomePO goHome() {
-        driver.findElement(GeneralHeaderLocator.JSA_LOGO).click();
-        return new HomePO(driver);
-    }
+    public abstract BasePageObject goHome();
 }

@@ -6,8 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pageobjects.ChallengePO;
-import pageobjects.HomePO;
+import pageobjects.MainPO;
 
 import java.util.concurrent.TimeUnit;
 
@@ -35,8 +34,8 @@ public class OnixTestRunner {
         driver.quit();
     }
 
-    protected HomePO welcome() {
+    protected MainPO welcome() {
         driver.get(baseUrl);
-        return new HomePO(driver);
+        return new MainPO(driver);
     }
 }
