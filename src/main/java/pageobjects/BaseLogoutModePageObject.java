@@ -22,6 +22,7 @@ public class BaseLogoutModePageObject extends BasePageObject {
         return new ChallengePO(driver);
     }
 
+    @Override
     public PricingPO goPricingPage() {
         driver.findElement(GeneralHeaderLocator.PRICING_HEADER_BUTTON).
                 click();

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Smoke LoginMode Tests">
+    <test verbose="2"
+          parallel="classes"
+          thread-count="2"
+          name="smoke login">
+
+        <classes>
+            <class name="ui.smoke.login.MainLoginModeTest"/>
+            <class name="ui.smoke.login.HomeLoginModeTest"/>
+            <class name="ui.smoke.LoginPageTest"/>
+        </classes>
+    </test>
+</suite>

@@ -11,6 +11,8 @@ import pageobjects.MainPO;
 import java.util.concurrent.TimeUnit;
 
 public class OnixTestRunner {
+    protected MainPO mainPO;
+
     protected OnixWebDriver driver;
 //    String baseUrl = "http://127.0.0.1:8000/";
     String baseUrl = "https://www.jamessmithacademy.com/";
@@ -36,6 +38,7 @@ public class OnixTestRunner {
 
     protected MainPO welcome() {
         driver.get(baseUrl);
-        return new MainPO(driver);
+        mainPO = new MainPO(driver);
+        return mainPO;
     }
 }

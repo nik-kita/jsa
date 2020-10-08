@@ -12,4 +12,6 @@ public abstract class BasePageObject {
     }
 
     public abstract BasePageObject goMainPage();
+
+    public abstract BasePageObject goPricingPage();
 }
