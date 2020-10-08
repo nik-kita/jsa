@@ -7,7 +7,7 @@
           name="smoke">
 
         <classes>
-            <class name="ui.smoke.HomeTest"/>
+            <class name="ui.smoke.MainPageTest"/>
             <class name="ui.smoke.BlogTest"/>
             <class name="ui.smoke.LoginPageTest"/>
             <class name="ui.smoke.ChallengeTest"/>

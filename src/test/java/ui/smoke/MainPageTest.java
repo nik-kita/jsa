@@ -2,7 +2,7 @@ package ui.smoke;
 
 import locators.GeneralFooterLocator;
 import locators.GeneralHeaderLocator;
-import locators.HomePageLocator;
+import locators.MainPageLocator;
 import locators.OnixLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import ui.OnixAssert;
 import ui.OnixTestRunner;
 
-public class HomeTest extends OnixTestRunner {
+public class MainPageTest extends OnixTestRunner {
 
     @BeforeClass
     public void goHomePage() {
@@ -29,15 +29,15 @@ public class HomeTest extends OnixTestRunner {
         return GeneralHeaderLocator.values();
     }
 
-    @Test(dataProvider = "getHomePageLocators")
-    public void homePageTest(OnixLocator locator) {
+    @Test(dataProvider = "getMainPageLocators")
+    public void mainPageTest(OnixLocator locator) {
         new OnixAssert(getDriver()).
                 checkCountOfElementByLocator(locator, 1);
     }
 
     @DataProvider
-    public Object[] getHomePageLocators() {
-        return HomePageLocator.values();
+    public Object[] getMainPageLocators() {
+        return MainPageLocator.values();
     }
 
     @Test(dataProvider = "getGeneralFooterLocators")

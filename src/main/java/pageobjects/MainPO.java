@@ -4,7 +4,9 @@ import locators.GeneralHeaderLocator;
 import engine.OnixWebDriver;
 import locators.JoinNowPageLocator;
 import locators.LoginPageLocator;
+import locators.login_mode.GeneralHeaderLoginModeLocator;
 import pageobjects.blog.BlogPO;
+import pageobjects.login.HomeLoginModePO;
 import popups.JsaCookies;
 
 public class MainPO extends BaseLogoutModePageObject {
@@ -13,43 +15,9 @@ public class MainPO extends BaseLogoutModePageObject {
         JsaCookies.acceptIfCookiesPresent(driver);
     }
 
-    public ChallengePO goChallengePage() {
-        driver.findElement(GeneralHeaderLocator.CHALLENGE_HEADER_BUTTON).
-                click();
-
-        return new ChallengePO(driver);
+    public HomeLoginModePO onlyLoginGoHome() {
+        driver.findElement(GeneralHeaderLoginModeLocator.TO_USER_HOME_CORNER_LINK).click();
+        return new HomeLoginModePO(driver);
     }
 
-    public PricingPO goPricingPage() {
-        driver.findElement(GeneralHeaderLocator.PRICING_HEADER_BUTTON).
-                click();
-        return new PricingPO(driver);
-    }
-
-    public TransformationsPO goTransformationsPage() {
-        driver.findElement(GeneralHeaderLocator.TRANSFORMATIONS_HEADER_BUTTON).
-                click();
-        return new TransformationsPO(driver);
-    }
-
-    public MyBookPO goMyBookPage() {
-        driver.findElement(GeneralHeaderLocator.BOOK_LOGO).
-                click();
-        return new MyBookPO(driver);
-    }
-
-    public BlogPO goBlogPage() {
-        driver.findElement(GeneralHeaderLocator.BLOG_HEADER_BUTTON).click();
-        return new BlogPO(driver);
-    }
-
-    public LoginPO goLoginPage() {
-        driver.findElement(GeneralHeaderLocator.LOGIN_HEADER_BUTTON).click();
-        return new LoginPO(driver);
-    }
-
-    public JoinNowPO goJoinNowPage() {
-        driver.findElement(GeneralHeaderLocator.JOIN_NOW_HEADER_BUTTON).click();
-        return new JoinNowPO(driver);
-    }
 }

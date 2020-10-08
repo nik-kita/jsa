@@ -11,5 +11,5 @@ public abstract class BasePageObject {
         this.driver = driver;
     }
 
-    public abstract BasePageObject goHome();
+    public abstract BasePageObject goMainPage();
 }

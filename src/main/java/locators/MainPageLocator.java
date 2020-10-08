@@ -2,7 +2,7 @@ package locators;
 
 import org.openqa.selenium.By;
 
-public enum HomePageLocator implements OnixLocator {
+public enum MainPageLocator implements OnixLocator {
     GET_STARTED_BUTTON_BANNER(By.cssSelector(".banner a[href='/users/register/']")),
     PLAY_STORE_BUTTON_BANNER(By.cssSelector(".banner img[alt='playstore']")),
     APPSTORE_BUTTON_BANNER(By.cssSelector(".banner img[alt='appstore']")),
@@ -18,7 +18,7 @@ public enum HomePageLocator implements OnixLocator {
 
     ;
 
-    HomePageLocator(By path) {
+    MainPageLocator(By path) {
         this.path = path;
     }
 
