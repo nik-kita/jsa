@@ -7,7 +7,7 @@ import pageobjects.login.PricingLoginModePO;
 
 public class PaymentMethodPopup {
     OnixWebDriver driver;
-    String PAYPAL_IFRAME_ID;
+    String PAYPAL_IFRAME_NAME;
 
     public PaymentMethodPopup(OnixWebDriver driver) {
         this.driver = driver;
@@ -27,10 +27,10 @@ public class PaymentMethodPopup {
 
     public PaymentMethodPopup clickPayPalTab() {
         driver.findElement(CardMethodLocator.PAY_PALL_TAB).click();
-        PAYPAL_IFRAME_ID = driver
+        PAYPAL_IFRAME_NAME = driver
                 .getSeleniumDriver()
                 .findElement(By.xpath("//iframe"))
-                .getAttribute("id");
+                .getAttribute("name");
         return this;
     }
     public PaymentMethodPopup clickCardTab() {
@@ -40,7 +40,8 @@ public class PaymentMethodPopup {
 
     public void switchToPayPalIframe() {
         clickPayPalTab();
-        driver.getSeleniumDriver().switchTo().frame(PAYPAL_IFRAME_ID);
+        System.out.println(PAYPAL_IFRAME_NAME);
+        driver.getSeleniumDriver().switchTo().frame(PAYPAL_IFRAME_NAME);
     }
     public void switchBackFromIframe() {
         driver.getSeleniumDriver().switchTo().parentFrame();
@@ -48,12 +49,12 @@ public class PaymentMethodPopup {
 
     public void clickPayPalButton() {
         switchToPayPalIframe();
-        driver.findElement(CardMethodLocator.PAYPAL_BTN_IN_PAYPAL_IFRAME).click();
+        driver.findElement(PayPalIframeLocator.PAYPAL_BTN_IN_PAYPAL_IFRAME).click();
     }
 
     public void clickDebitOrCreditCard() {
         switchToPayPalIframe();
-        driver.findElement(CardMethodLocator.DEBIT_OR_CREDIT_BTN_IN_PAYPAL_IFRAME).click();
+        driver.findElement(PayPalIframeLocator.DEBIT_OR_CREDIT_BTN_IN_PAYPAL_IFRAME).click();
     }
 
 
@@ -62,6 +63,21 @@ public class PaymentMethodPopup {
         PAY_PALL_TAB(By.id("nav-paypal-tab")),
         CARD_TAB(By.id("nav-card-tab")),
         PAY_WITH_CARD_BUTTON(By.xpath("//button[contains(text(), 'Pay with Card')]")),
+
+        ;
+
+        private By path;
+
+        CardMethodLocator(By path) {
+            this.path = path;
+        }
+
+        @Override
+        public By getPath() {
+            return path;
+        }
+    }
+    public enum PayPalIframeLocator implements OnixLocator {
         PAYPAL_BTN_IN_PAYPAL_IFRAME(By.xpath("//div[@class='paypal-button-label-container']//img[@aria-label='PayPal']")),
         DEBIT_OR_CREDIT_BTN_IN_PAYPAL_IFRAME(By.xpath("//*[@class='paypal-button-label-container']//span[contains(text(), 'Debit or Credit')]")),
 
@@ -69,7 +85,7 @@ public class PaymentMethodPopup {
 
         private By path;
 
-        CardMethodLocator(By path) {
+        PayPalIframeLocator(By path) {
             this.path = path;
         }
 

@@ -27,12 +27,7 @@ public class PaymentMethodPopupTest extends JsaLoginBaseTestRunner {
     }
     @DataProvider
     public Object[] getPaymentMethodCardLocators() {
-        return new Object[]{
-                PaymentMethodPopup.CardMethodLocator.CARD_TAB,
-                PaymentMethodPopup.CardMethodLocator.PAY_PALL_TAB,
-                PaymentMethodPopup.CardMethodLocator.EXIT_X_BUTTON,
-                PaymentMethodPopup.CardMethodLocator.PAY_WITH_CARD_BUTTON
-        };
+        return PaymentMethodPopup.CardMethodLocator.values();
     }
 
     @Test(dataProvider = "getPaymentMethodPayPalLocators")
@@ -43,9 +38,6 @@ public class PaymentMethodPopupTest extends JsaLoginBaseTestRunner {
     }
     @DataProvider
     public Object[] getPaymentMethodPayPalLocators() {
-        return new Object[]{
-                PaymentMethodPopup.CardMethodLocator.PAYPAL_BTN_IN_PAYPAL_IFRAME,
-                PaymentMethodPopup.CardMethodLocator.DEBIT_OR_CREDIT_BTN_IN_PAYPAL_IFRAME,
-        };
+        return PaymentMethodPopup.PayPalIframeLocator.values();
     }
 }

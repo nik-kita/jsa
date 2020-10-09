@@ -3,6 +3,7 @@ package ui.jsa_test_cases;
 import data.User;
 import locators.MyBookPageLocator;
 import locators.OnixLocator;
+import locators.login_mode.popups.PaymentMethodPopup;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -32,13 +33,30 @@ public class WS extends OnixTestRunner {
 
     @Test(testName = "Pricing (WS)")
     public void test_2() {
-        mainPO.goLoginPage()
+        SoftAssert softAssert = new SoftAssert();
+        PaymentMethodPopup paymentMethodPopup = mainPO.goLoginPage()
                 .login(User.getValidUser())
                 .goMainPage()
                 .goPricingPage()
                 .goPricingPlans()
-                .clickBlocksButton();
+                .subscribePremium();
+        for(OnixLocator l : PaymentMethodPopup.CardMethodLocator.values()) {
+            new OnixAssert(driver).softCheckCountOfElementByLocator(l, 1, softAssert);
+        }
+        System.out.println("-------------------------------------------------");
+        //TODO in this place sometimes we should have some iframes
+//        paymentMethodPopup.clickPayPalTab();
+//        try {
+//            Thread.sleep(100000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        paymentMethodPopup.switchToPayPalIframe();
+        for(OnixLocator l : PaymentMethodPopup.PayPalIframeLocator.values()) {
+            new OnixAssert(driver).softCheckCountOfElementByLocator(l, 1, softAssert);
+        }
 
+        softAssert.assertAll();
     }
 
 
