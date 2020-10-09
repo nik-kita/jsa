@@ -53,4 +53,8 @@ public class OnixWebDriver {
         driver.quit();
     }
 
+    public boolean isPresent(OnixLocator locator) {
+        return findElements(locator).size() > 0;
+    }
+
 }

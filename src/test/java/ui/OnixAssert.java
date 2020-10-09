@@ -19,8 +19,8 @@ public class OnixAssert {
 
         String errorMessage = "\n\n" +
                 "\n----------------------------" +
-                "\nIn " + locator.getClass().getName() + " class\n" +
-                "\n" + locator.name() +
+                "\nIn " + locator.getClass().getName() +
+                "\n\n" + locator.name() +
                 "\n" + locator.getPath() +
                 "\n----------------------------" +
                 "\n=== NUMBER OF ELEMENTS ===\n";
@@ -34,8 +34,8 @@ public class OnixAssert {
 
         String errorMessage = "\n\n" +
                 "\n----------------------------" +
-                "\nIn " + locator.getClass().getName() + " class\n" +
-                "\n" + locator.name() +
+                "\nIn " + locator.getClass().getName() +
+                "\n\n" + locator.name() +
                 "\n" + locator.getPath() +
                 "\n----------------------------" +
                 "\n=== NUMBER OF ELEMENTS ===\n";
