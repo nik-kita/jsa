@@ -20,6 +20,10 @@ public class TransformationsPO extends BaseLogoutModePageObject {
             this.path = path;
         }
 
+        @Override
+        public By getPath() {
+            return path;
+        }
     }
 
 }

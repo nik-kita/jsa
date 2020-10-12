@@ -2,7 +2,7 @@ package pageobjects;
 
 import engine.OnixWebDriver;
 import locators.GeneralHeaderLocator;
-import pageobjects.blog.BlogPO;
+
 
 public class BaseLogoutModePageObject extends BasePageObject {
     public BaseLogoutModePageObject(OnixWebDriver driver) {
@@ -35,16 +35,9 @@ public class BaseLogoutModePageObject extends BasePageObject {
         return new TransformationsPO(driver);
     }
 
-    public MyBookPO goMyBookPage() {
-        driver.findElement(GeneralHeaderLocator.BOOK_LOGO).
-                click();
-        return new MyBookPO(driver);
-    }
 
-    public BlogPO goBlogPage() {
-        driver.findElement(GeneralHeaderLocator.BLOG_HEADER_BUTTON).click();
-        return new BlogPO(driver);
-    }
+
+
 
     public LoginPO goLoginPage() {
         driver.findElement(GeneralHeaderLocator.LOGIN_HEADER_BUTTON).click();

@@ -11,7 +11,7 @@ public class BaseLoginModePageObject extends BasePageObject {
 
     @Override
     public BasePageObject goMainPage() {
-        driver.findElement(HomeLoginModeLocator.JSA_LOGO).click();
+        driver.findElement(HomeLoginModePO.Locator.JSA_LOGO).click();
         return new HomeLoginModePO(driver);
     }
 

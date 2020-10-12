@@ -18,7 +18,7 @@ public class OnixTestListener implements ITestListener {
 
         Object i = result.getInstance();
 
-        saveScreenshotPNG(((RandomBugsCatcher) i).driver.getSeleniumDriver());
+        saveScreenshotPNG(((OnixTestRunner) i).driver.getSeleniumDriver());
     }
     @Override
     public void onTestSkipped(ITestResult result) {

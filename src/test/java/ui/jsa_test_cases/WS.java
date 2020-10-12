@@ -16,16 +16,6 @@ public class WS extends OnixTestRunner {
         welcome();
     }
 
-    @Test(testName = "My book (WS)")
-    public void test_1() {
-        mainPO.goMyBookPage();
-        SoftAssert softAssert =  new SoftAssert();
-        OnixAssert onixAssert = new OnixAssert(driver);
-        for(OnixLocator l : MyBookPageLocator.values()) {
-            softAssert = onixAssert.softCheckCountOfElementByLocator(l, 1, softAssert);
-        }
-        softAssert.assertAll();
-    }
 
     @Test(testName = "Pricing (WS)")
     public void test_2() {

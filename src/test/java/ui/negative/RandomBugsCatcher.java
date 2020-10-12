@@ -1,6 +1,8 @@
 package ui.negative;
 
 import data.User;
+import pageobjects.login.HomeLoginModePO;
+import pageobjects.login.UserCabinetDropdownPO;
 import pageobjects.login.popups.PaymentMethodPopup;
 import org.openqa.selenium.By;
 import org.testng.annotations.*;
@@ -51,6 +53,6 @@ public class RandomBugsCatcher extends OnixTestRunner {
     @AfterMethod
     public void logout() {
         pricingPlansLoginModePO.goHome().openUserDropDown();
-        driver.findElement(HomeLoginModeLocator.UserCabinetLocator.LOG_OUT).click();
+        driver.findElement(UserCabinetDropdownPO.Locator.LOG_OUT).click();
     }
 }

@@ -47,6 +47,10 @@ public class PricingPlansLoginModePO extends BaseLoginModePageObject {
         Locator(By path) {
             this.path = path;
         }
+        @Override
+        public By getPath() {
+            return path;
+        }
 
     }
 }

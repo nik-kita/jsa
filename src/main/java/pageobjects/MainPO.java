@@ -35,6 +35,11 @@ public class MainPO extends BaseLogoutModePageObject {
 
         private By path;
 
+        @Override
+        public By getPath() {
+            return path;
+        }
+
     }
 
 }

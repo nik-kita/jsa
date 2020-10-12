@@ -50,7 +50,7 @@ public class OnixWebDriver {
         List<OnixWebElement> result = new ArrayList<>();
         for (WebElement e : driver.findElements(locator.getPath())) {
             result.add(new OnixWebElement(e));
-        }
+       }
         return result;
     }
 

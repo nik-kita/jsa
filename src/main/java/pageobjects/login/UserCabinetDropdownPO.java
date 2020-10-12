@@ -22,6 +22,10 @@ public class UserCabinetDropdownPO extends BaseLoginModePageObject {
         Locator(By path) {
             this.path = path;
         }
+        @Override
+        public By getPath() {
+            return path;
+        }
 
     }
 }

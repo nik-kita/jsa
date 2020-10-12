@@ -18,21 +18,21 @@ public class JsaCookies {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if (driver.findElements(PopupsLocators.JsaCookiesLocator.DIALOG_BODY).size() > 0) {
-                driver.findElement(PopupsLocators.JsaCookiesLocator.OK_BUTTON).click();
+            if (driver.findElements(Locator.DIALOG_BODY).size() > 0) {
+                driver.findElement(Locator.OK_BUTTON).click();
                 driver.setSetting("jsacookies", true);
             }
         }
 
     }
-    public enum JsaCookiesLocator implements OnixLocator {
+    public enum Locator implements OnixLocator {
         DIALOG_BODY(By.cssSelector("#CybotCookiebotDialog")),
         OK_BUTTON(By.cssSelector("#CybotCookiebotDialogBodyLevelButtonAccept")),
 
         ;
         private By path;
 
-        JsaCookiesLocator(By path) {
+        Locator(By path) {
             this.path = path;
         }
 

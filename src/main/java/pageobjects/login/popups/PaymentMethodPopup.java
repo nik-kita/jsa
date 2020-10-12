@@ -71,6 +71,10 @@ public class PaymentMethodPopup {
         CardMethodLocator(By path) {
             this.path = path;
         }
+        @Override
+        public By getPath() {
+            return path;
+        }
 
     }
     public enum PayPalIframeLocator implements OnixLocator {
@@ -83,6 +87,10 @@ public class PaymentMethodPopup {
 
         PayPalIframeLocator(By path) {
             this.path = path;
+        }
+        @Override
+        public By getPath() {
+            return path;
         }
 
     }

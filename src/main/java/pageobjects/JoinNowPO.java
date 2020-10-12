@@ -36,6 +36,10 @@ public class JoinNowPO extends BaseLogoutModePageObject {
         Locator(By path) {
             this.path = path;
         }
+        @Override
+        public By getPath() {
+            return path;
+        }
 
     }
 }

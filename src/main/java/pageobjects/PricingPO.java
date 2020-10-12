@@ -24,6 +24,10 @@ public class PricingPO extends BaseLogoutModePageObject {
             this.path = path;
         }
 
+        @Override
+        public By getPath() {
+            return path;
+        }
     }
 
 }
