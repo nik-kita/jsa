@@ -8,7 +8,7 @@ public enum PricingPlansLoginModeLocator implements OnixLocator {
     HOME_HEADER_BUTTON(By.cssSelector(".nav [href='/users/']")),
     ACCOUNT_HEADER_BUTTON(By.cssSelector(".nav [href='/users/account/']")),
     PRICING_PLANS_HEADER_BUTTON(By.cssSelector(".nav [href='/users/pricing/']")),
-    LOGOUT_BUTTON(By.cssSelector(".login [href='/accounts/logout']")),
+    LOGOUT_BUTTON(By.cssSelector(".login[href='/accounts/logout']")),
     SUBSCRIPTIONS_BUTTON(By.xpath("//*[contains(text(), 'Subscriptions')]")),
     BLOCKS_BUTTON(By.xpath("//*[contains(text(), 'Blocks')]")),
     SUBSCRIBE_BTN_STANDARD_PLAN(By.id("standardSubscriptionButton")),

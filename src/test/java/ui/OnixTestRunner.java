@@ -27,7 +27,7 @@ public class OnixTestRunner {
         WebDriverManager.chromedriver().setup();
         WebDriver chrome = new ChromeDriver();
         chrome.manage().window().maximize();
-        chrome.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        chrome.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
         driver = new OnixWebDriver(chrome);
     }
 

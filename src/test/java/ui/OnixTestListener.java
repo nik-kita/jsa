@@ -15,9 +15,7 @@ public class OnixTestListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         System.out.println(result.getTestContext().getName());
-        ITestContext context = result.getTestContext();
-        Object o = context.getAttribute("driver");
-        System.out.println(o);
+
         Object i = result.getInstance();
 
         saveScreenshotPNG(((RandomBugsCatcher) i).driver.getSeleniumDriver());

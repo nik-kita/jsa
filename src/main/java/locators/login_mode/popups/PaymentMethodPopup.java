@@ -4,6 +4,7 @@ import engine.OnixWebDriver;
 import locators.OnixLocator;
 import org.openqa.selenium.By;
 import pageobjects.login.PricingLoginModePO;
+import pageobjects.login.PricingPlansLoginModePO;
 
 public class PaymentMethodPopup {
     OnixWebDriver driver;
@@ -13,9 +14,9 @@ public class PaymentMethodPopup {
         this.driver = driver;
     }
 
-    public PricingLoginModePO exit() {
+    public PricingPlansLoginModePO exit() {
         driver.findElement(CardMethodLocator.EXIT_X_BUTTON).click();
-        return new PricingLoginModePO(driver);
+        return new PricingPlansLoginModePO(driver);
     }
 
     public void clickPayWithCard() {
