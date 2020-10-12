@@ -4,6 +4,7 @@ import locators.OnixLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pageobjects.login.PricingLoginModePO;
 import pageobjects.login.PricingPlansLoginModePO;
 import ui.OnixAssert;
 
@@ -20,6 +21,6 @@ public class PricingLoginModeTest extends JsaLoginBaseTestRunner {
     }
     @DataProvider
     public Object[] getPricingLoginModePageLocators() {
-        return PricingPlansLoginModePO.Locator.values();
+        return PricingLoginModePO.Locator.values();
     }
 }

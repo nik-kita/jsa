@@ -10,7 +10,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import ui.negative.RandomBugsCatcher;
 
-public class OnixTestListener implements ITestListener {
+public class OnixScreenFailListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {

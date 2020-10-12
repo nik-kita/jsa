@@ -1,17 +1,16 @@
 package ui.negative;
 
 import data.User;
-import pageobjects.login.HomeLoginModePO;
 import pageobjects.login.UserCabinetDropdownPO;
 import pageobjects.login.popups.PaymentMethodPopup;
 import org.openqa.selenium.By;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import pageobjects.login.PricingPlansLoginModePO;
-import ui.OnixTestListener;
+import ui.OnixScreenFailListener;
 import ui.OnixTestRunner;
 
-@Listeners(OnixTestListener.class)
+@Listeners(OnixScreenFailListener.class)
 public class RandomBugsCatcher extends OnixTestRunner {
     PricingPlansLoginModePO pricingPlansLoginModePO;
     @BeforeMethod
