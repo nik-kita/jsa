@@ -80,6 +80,22 @@ public class OnixWebDriver {
         return waitVisibility(seleniumPath, 5);
     }
 
+    public OnixWebDriver toIframe(int index) {
+        return new OnixWebDriver(driver.switchTo().frame(index));
+    }
+
+    public OnixWebDriver toIframe(String nameOrId) {
+        return new OnixWebDriver(driver.switchTo().frame(nameOrId));
+    }
+
+    public OnixWebDriver toIframe(OnixWebElement element) {
+        return new OnixWebDriver(driver.switchTo().frame(element.getSeleniumWebElement()));
+    }
+
+    public OnixWebDriver toParentFrame() {
+        return new OnixWebDriver(driver.switchTo().parentFrame());
+    }
+
     public void scrollPageDown() {
         ((JavascriptExecutor) driver)
                 .executeScript("window.scrollTo(0, document.body.scrollHeight)");

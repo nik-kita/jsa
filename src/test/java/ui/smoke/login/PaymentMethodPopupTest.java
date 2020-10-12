@@ -1,6 +1,7 @@
 package ui.smoke.login;
 
 import locators.OnixLocator;
+import org.testng.asserts.SoftAssert;
 import pageobjects.login.popups.PaymentMethodPopup;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -27,14 +28,15 @@ public class PaymentMethodPopupTest extends JsaLoginBaseTestRunner {
     }
     @DataProvider
     public Object[] getPaymentMethodCardLocators() {
-        return PaymentMethodPopup.CardMethodLocator.values();
+        return PaymentMethodPopup.Locator.values();
     }
 
     @Test(dataProvider = "getPaymentMethodPayPalLocators")
     public void paymentMethodPayPalTest(OnixLocator locator) {
-        paymentMethodPopup.switchToPayPalIframe();
-        new OnixAssert(driver).checkCountOfElementByLocator(locator, 1);
-        paymentMethodPopup.switchBackFromIframe();
+        PaymentMethodPopup.PayPalIframe frame = paymentMethodPopup.switchToPayPalIframe();
+        SoftAssert soft = new SoftAssert();
+        new OnixAssert(driver).softCheckCountOfElementByLocator(locator, 1, soft);
+        paymentMethodPopup = frame.clickCardTab();
     }
     @DataProvider
     public Object[] getPaymentMethodPayPalLocators() {

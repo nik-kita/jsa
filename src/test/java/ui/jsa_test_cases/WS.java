@@ -26,7 +26,7 @@ public class WS extends OnixTestRunner {
                 .goPricingPage()
                 .goPricingPlans()
                 .subscribePremium();
-        for(OnixLocator l : PaymentMethodPopup.CardMethodLocator.values()) {
+        for(OnixLocator l : PaymentMethodPopup.Locator.values()) {
             new OnixAssert(driver).softCheckCountOfElementByLocator(l, 1, softAssert);
         }
         System.out.println("-------------------------------------------------");

@@ -41,7 +41,7 @@ public class RandomBugsCatcher extends OnixTestRunner {
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-        driver.findElement(PaymentMethodPopup.CardMethodLocator.PAY_PALL_TAB).click();
+        driver.findElement(PaymentMethodPopup.Locator.PAY_PALL_TAB).click();
 
         SoftAssert sa = new SoftAssert();
         sa.assertTrue(driver.getSeleniumDriver().findElements(By.xpath("//div[@id='nav-paypal']/div[@style='display: block;']")).size() == 1);
