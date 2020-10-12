@@ -1,7 +1,7 @@
 package ui.smoke.login;
 
 import locators.OnixLocator;
-import locators.login_mode.popups.PaymentMethodPopup;
+import pageobjects.login.popups.PaymentMethodPopup;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -20,7 +20,7 @@ public class PaymentMethodPopupTest extends JsaLoginBaseTestRunner {
 
     @Test(dataProvider = "getPaymentMethodCardLocators")
     public void paymentMethodCardTest(OnixLocator locator) {
-        if(!driver.isPresent(locator)) {
+        if(!driver.isElementPresent(locator)) {
             paymentMethodPopup.clickCardTab();
         }
         new OnixAssert(driver).checkCountOfElementByLocator(locator, 1);

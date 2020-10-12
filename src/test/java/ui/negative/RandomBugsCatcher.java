@@ -1,24 +1,14 @@
 package ui.negative;
 
 import data.User;
-import locators.OnixLocator;
-import locators.login_mode.GeneralHeaderLoginModeLocator;
 import locators.login_mode.HomeLoginModeLocator;
-import locators.login_mode.PricingPlansLoginModeLocator;
-import locators.login_mode.popups.PaymentMethodPopup;
-import org.junit.Assert;
+import pageobjects.login.popups.PaymentMethodPopup;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import pageobjects.login.PricingPlansLoginModePO;
-import pageobjects.login.UserCabinetDropdownPO;
-import ui.OnixAssert;
 import ui.OnixTestListener;
 import ui.OnixTestRunner;
-import ui.smoke.login.JsaLoginBaseTestRunner;
-
-import java.util.concurrent.TimeUnit;
 
 @Listeners(OnixTestListener.class)
 public class RandomBugsCatcher extends OnixTestRunner {
@@ -33,7 +23,7 @@ public class RandomBugsCatcher extends OnixTestRunner {
                 .goPricingPlans();
     }
 
-    @Test(invocationCount = 50)
+    @Test(invocationCount = 3)
     public void test_2() {
         PaymentMethodPopup p = pricingPlansLoginModePO.subscribePremium()
                 .clickPayPalTab();

@@ -9,6 +9,10 @@ public class OnixWebElement {
         this.element = element;
     }
 
+    public WebElement getSeleniumWebElement() {
+        return element;
+    }
+
     public void click() {
         element.click();
     }

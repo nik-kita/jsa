@@ -1,9 +1,8 @@
-package locators.login_mode.popups;
+package pageobjects.login.popups;
 
 import engine.OnixWebDriver;
 import locators.OnixLocator;
 import org.openqa.selenium.By;
-import pageobjects.login.PricingLoginModePO;
 import pageobjects.login.PricingPlansLoginModePO;
 
 public class PaymentMethodPopup {
@@ -20,7 +19,7 @@ public class PaymentMethodPopup {
     }
 
     public void clickPayWithCard() {
-        if(!driver.isPresent(CardMethodLocator.PAY_WITH_CARD_BUTTON)) {
+        if(!driver.isElementPresent(CardMethodLocator.PAY_WITH_CARD_BUTTON)) {
             clickCardTab();
         }
         driver.findElement(CardMethodLocator.PAY_WITH_CARD_BUTTON).click();

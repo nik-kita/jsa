@@ -2,7 +2,7 @@ package pageobjects.login;
 
 import engine.OnixWebDriver;
 import locators.login_mode.PricingPlansLoginModeLocator;
-import locators.login_mode.popups.PaymentMethodPopup;
+import pageobjects.login.popups.PaymentMethodPopup;
 
 public class PricingPlansLoginModePO extends BaseLoginModePageObject {
     public PricingPlansLoginModePO(OnixWebDriver driver) {

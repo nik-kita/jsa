@@ -3,15 +3,12 @@ package ui.jsa_test_cases;
 import data.User;
 import locators.MyBookPageLocator;
 import locators.OnixLocator;
-import locators.login_mode.popups.PaymentMethodPopup;
+import pageobjects.login.popups.PaymentMethodPopup;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import ui.OnixAssert;
 import ui.OnixTestRunner;
-import ui.smoke.MainPageTest;
-import ui.smoke.MyBookTest;
 
 public class WS extends OnixTestRunner {
 
