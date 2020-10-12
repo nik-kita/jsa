@@ -1,12 +1,12 @@
 package ui.smoke.login;
 
 import locators.GeneralFooterLocator;
-import locators.MainPageLocator;
 import locators.OnixLocator;
 import locators.login_mode.GeneralHeaderLoginModeLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pageobjects.MainPO;
 import ui.OnixAssert;
 
 public class MainLoginModeTest extends JsaLoginBaseTestRunner {
@@ -32,7 +32,7 @@ public class MainLoginModeTest extends JsaLoginBaseTestRunner {
 
     @DataProvider
     public Object[] getMainPageLocators() {
-        return MainPageLocator.values();
+        return MainPO.Locator.values();
     }
 
     @Test(dataProvider = "getGeneralFooterLocators")

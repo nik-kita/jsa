@@ -1,16 +1,12 @@
 package ui.smoke;
 
-import locators.BlogPageLocator;
 import locators.OnixLocator;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pageobjects.blog.BlogPO;
 import ui.OnixAssert;
 import ui.OnixTestRunner;
-
-import java.util.concurrent.TimeUnit;
 
 public class BlogTest extends OnixTestRunner {
     @BeforeClass
@@ -25,6 +21,6 @@ public class BlogTest extends OnixTestRunner {
 
     @DataProvider
     public Object[] getBlogLocators() {
-        return BlogPageLocator.values();
+        return BlogPO.Locator.values();
     }
 }

@@ -72,10 +72,6 @@ public class PaymentMethodPopup {
             this.path = path;
         }
 
-        @Override
-        public By getPath() {
-            return path;
-        }
     }
     public enum PayPalIframeLocator implements OnixLocator {
         PAYPAL_BTN_IN_PAYPAL_IFRAME(By.xpath("//div[@class='paypal-button-label-container']//img[@aria-label='PayPal']")),
@@ -89,10 +85,6 @@ public class PaymentMethodPopup {
             this.path = path;
         }
 
-        @Override
-        public By getPath() {
-            return path;
-        }
     }
 
 }

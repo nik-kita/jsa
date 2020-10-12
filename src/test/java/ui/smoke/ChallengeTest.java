@@ -1,10 +1,10 @@
 package ui.smoke;
 
-import locators.ChallengePageLocator;
 import locators.OnixLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pageobjects.ChallengePO;
 import ui.OnixAssert;
 import ui.OnixTestRunner;
 
@@ -23,6 +23,6 @@ public class ChallengeTest extends OnixTestRunner {
 
     @DataProvider
     public Object[] getChallengePageLocators() {
-        return ChallengePageLocator.values();
+        return ChallengePO.Locator.values();
     }
 }

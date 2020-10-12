@@ -1,14 +1,10 @@
 package ui.smoke.login;
 
-import locators.GeneralFooterLocator;
 import locators.OnixLocator;
-import locators.login_mode.GeneralHeaderLoginModeLocator;
-import locators.login_mode.HomeLoginModeLocator;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pageobjects.MainPO;
 import pageobjects.login.HomeLoginModePO;
+import pageobjects.login.UserCabinetDropdownPO;
 import ui.OnixAssert;
 
 public class HomeLoginModeTest extends JsaLoginBaseTestRunner {
@@ -22,7 +18,7 @@ public class HomeLoginModeTest extends JsaLoginBaseTestRunner {
 
     @DataProvider
     public Object[] getHomeLoginModeLocators() {
-        return HomeLoginModeLocator.values();
+        return HomeLoginModePO.Locator.values();
     }
 
     @Test(dataProvider = "getUserCabinetDropdownLocators")
@@ -33,7 +29,7 @@ public class HomeLoginModeTest extends JsaLoginBaseTestRunner {
 
     @DataProvider
     public Object[] getUserCabinetDropdownLocators() {
-        return HomeLoginModeLocator.UserCabinetLocator.values();
+        return UserCabinetDropdownPO.Locator.values();
     }
 
 }

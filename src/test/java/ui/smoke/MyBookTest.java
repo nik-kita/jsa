@@ -1,10 +1,10 @@
 package ui.smoke;
 
-import locators.MyBookPageLocator;
 import locators.OnixLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pageobjects.MyBookPO;
 import ui.OnixAssert;
 import ui.OnixTestRunner;
 
@@ -23,6 +23,6 @@ public class MyBookTest extends OnixTestRunner {
 
     @DataProvider
     public Object[] getMyBookLocators() {
-        return MyBookPageLocator.values();
+        return MyBookPO.Locator.values();
     }
 }

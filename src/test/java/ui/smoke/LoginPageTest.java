@@ -1,10 +1,10 @@
 package ui.smoke;
 
-import locators.LoginPageLocator;
 import locators.OnixLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pageobjects.LoginPO;
 import ui.OnixAssert;
 import ui.OnixTestRunner;
 
@@ -21,6 +21,6 @@ public class LoginPageTest extends OnixTestRunner {
 
     @DataProvider
     public Object[] getLoginPageLocators() {
-        return LoginPageLocator.values();
+        return LoginPO.Locator.values();
     }
 }

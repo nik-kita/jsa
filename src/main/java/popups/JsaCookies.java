@@ -1,7 +1,8 @@
 package popups;
 
 import engine.OnixWebDriver;
-import locators.PopupsLocators;
+import locators.OnixLocator;
+import org.openqa.selenium.By;
 
 public class JsaCookies {
     OnixWebDriver driver;
@@ -24,4 +25,21 @@ public class JsaCookies {
         }
 
     }
+    public enum JsaCookiesLocator implements OnixLocator {
+        DIALOG_BODY(By.cssSelector("#CybotCookiebotDialog")),
+        OK_BUTTON(By.cssSelector("#CybotCookiebotDialogBodyLevelButtonAccept")),
+
+        ;
+        private By path;
+
+        JsaCookiesLocator(By path) {
+            this.path = path;
+        }
+
+        @Override
+        public By getPath() {
+            return path;
+        }
+    }
+
 }

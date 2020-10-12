@@ -1,10 +1,10 @@
 package ui.smoke;
 
 import locators.OnixLocator;
-import locators.TransformationsPageLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pageobjects.TransformationsPO;
 import ui.OnixAssert;
 import ui.OnixTestRunner;
 
@@ -22,6 +22,6 @@ public class TransformationsTest extends OnixTestRunner {
 
     @DataProvider
     public Object[] getTransformationsLocators() {
-        return TransformationsPageLocator.values();
+        return TransformationsPO.Locator.values();
     }
 }

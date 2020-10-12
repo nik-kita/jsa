@@ -1,10 +1,10 @@
 package ui.smoke;
 
 import locators.OnixLocator;
-import locators.PricingPageLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pageobjects.PricingPO;
 import ui.OnixAssert;
 import ui.OnixTestRunner;
 
@@ -23,6 +23,6 @@ public class PricingTest extends OnixTestRunner {
 
     @DataProvider
     public Object[] getPricingLocators() {
-        return PricingPageLocator.values();
+        return PricingPO.Locator.values();
     }
 }

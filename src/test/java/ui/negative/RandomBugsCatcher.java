@@ -1,7 +1,6 @@
 package ui.negative;
 
 import data.User;
-import locators.login_mode.HomeLoginModeLocator;
 import pageobjects.login.popups.PaymentMethodPopup;
 import org.openqa.selenium.By;
 import org.testng.annotations.*;
