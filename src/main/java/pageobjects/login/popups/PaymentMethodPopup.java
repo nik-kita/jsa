@@ -28,6 +28,7 @@ public class PaymentMethodPopup {
                 .getSeleniumDriver()
                 .findElement(By.xpath("//iframe"))
                 .getAttribute("name");
+        System.out.println(PAYPAL_IFRAME_NAME);
         return this;
     }
     public PaymentMethodPopup clickCardTab() {
