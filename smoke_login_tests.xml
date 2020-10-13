@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Smoke LoginMode Tests">
     <listeners>
-        <listener class-name="ui.OnixScreenFailListener"></listener>
+        <listener class-name="ui.OnixScreenFailListener"/>
     </listeners>
     <test verbose="2"
           parallel="classes"
@@ -14,7 +14,7 @@
             <class name="ui.smoke.login.HomeLoginModeTest"/>
             <class name="ui.smoke.LoginPageTest"/>
             <class name="ui.smoke.login.PaymentMethodPopupTest"/>
-            <class name="ui.smoke.login.PricingLoginModeTest"></class>
+            <class name="ui.smoke.login.PricingLoginModeTest"/>
         </classes>
     </test>
 </suite>
