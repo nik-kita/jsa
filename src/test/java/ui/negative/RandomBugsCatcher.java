@@ -23,7 +23,7 @@ public class RandomBugsCatcher extends OnixTestRunner {
                 .goPricingPlans();
     }
 
-    @Test(invocationCount = 3)
+    @Test(invocationCount = 100)
     public void test_2() {
         PaymentMethodPopup p = pricingPlansLoginModePO.subscribePremium()
                 .clickPayPalTab();
