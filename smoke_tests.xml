@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Smoke LogoutMode Tests">
+    <listeners>
+        <listener class-name="ui.OnixScreenFailListener"></listener>
+    </listeners>
+    <test verbose="2"
+          parallel="classes"
+          thread-count="3"
+          name="smoke">
+        <classes>
+            <class name="ui.smoke.MainPageTest"/>
+
+            <class name="ui.smoke.LoginPageTest"/>
+            <class name="ui.smoke.ChallengeTest"/>
+
+            <class name="ui.smoke.PricingTest"/>
+            <class name="ui.smoke.TransformationsTest"/>
+            <class name="ui.smoke.JoinNowPageTest"/>
+        </classes>
+    </test>
+</suite>
