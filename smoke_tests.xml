@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Smoke LogoutMode Tests">
     <listeners>
-        <listener class-name="ui.OnixScreenFailListener"></listener>
+        <listener class-name="ui.OnixScreenFailListener"/>
     </listeners>
     <test verbose="2"
           parallel="classes"

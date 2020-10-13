@@ -1,4 +1,4 @@
-package locators;
+package pageobjects.locators;
 
 import org.openqa.selenium.By;
 

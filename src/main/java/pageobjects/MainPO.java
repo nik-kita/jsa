@@ -1,9 +1,9 @@
 package pageobjects;
 
 import engine.OnixWebDriver;
-import locators.OnixLocator;
+import pageobjects.locators.OnixLocator;
 import org.openqa.selenium.By;
-import popups.JsaCookies;
+import pageobjects.popups.JsaCookies;
 
 public class MainPO extends BaseLogoutModePageObject {
     public MainPO(OnixWebDriver driver) {

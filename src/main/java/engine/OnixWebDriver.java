@@ -1,6 +1,6 @@
 package engine;
 
-import locators.OnixLocator;
+import pageobjects.locators.OnixLocator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

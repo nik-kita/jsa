@@ -1,8 +1,8 @@
 package ui.smoke;
 
-import locators.GeneralFooterLocator;
-import locators.GeneralHeaderLocator;
-import locators.OnixLocator;
+import pageobjects.locators.GeneralFooterLocator;
+import pageobjects.locators.GeneralHeaderLocator;
+import pageobjects.locators.OnixLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

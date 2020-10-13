@@ -1,8 +1,8 @@
 package ui.smoke.login;
 
-import locators.GeneralFooterLocator;
-import locators.OnixLocator;
-import locators.login_mode.GeneralHeaderLoginModeLocator;
+import pageobjects.locators.GeneralFooterLocator;
+import pageobjects.locators.OnixLocator;
+import pageobjects.locators.login_mode.GeneralHeaderLoginModeLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

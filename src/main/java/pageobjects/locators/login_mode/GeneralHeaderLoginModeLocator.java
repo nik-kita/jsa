@@ -1,23 +1,23 @@
-package locators;
+package pageobjects.locators.login_mode;
 
+import pageobjects.locators.OnixLocator;
 import org.openqa.selenium.By;
 
-public enum GeneralHeaderLocator implements OnixLocator {
+public enum GeneralHeaderLoginModeLocator implements OnixLocator {
     JSA_LOGO(By.cssSelector("a[href='/'] img")),
-
+    BOOK_LOGO(By.cssSelector(".nav a[href='/not-a-diet-book/'] img")),//TODO there are two books logos on this locator
     PRICING_HEADER_BUTTON(By.cssSelector(".nav a[href='/pricing/']")),
     TRANSFORMATIONS_HEADER_BUTTON(By.cssSelector(".nav a[href='/transformations/']")),
     CHALLENGE_HEADER_BUTTON(By.cssSelector(".nav a[href='/challenge/about/']")),
-    LOGIN_HEADER_BUTTON(By.cssSelector(".nav a[href='/users/login/']")),
-    JOIN_NOW_HEADER_BUTTON(By.cssSelector(".nav a[href='/users/register/']")),
 
+    TO_USER_HOME_CORNER_LINK(By.cssSelector("[href='/users/']")),
 
 
     ;
 
     private By path;
 
-    GeneralHeaderLocator(By path) {
+    GeneralHeaderLoginModeLocator(By path) {
         this.path = path;
     }
 
@@ -25,4 +25,6 @@ public enum GeneralHeaderLocator implements OnixLocator {
     public By getPath() {
         return path;
     }
+
+
 }

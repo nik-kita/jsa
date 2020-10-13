@@ -1,6 +1,6 @@
 package ui.smoke.login;
 
-import locators.OnixLocator;
+import pageobjects.locators.OnixLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

@@ -1,7 +1,7 @@
 package pageobjects;
 
 import engine.OnixWebDriver;
-import locators.OnixLocator;
+import pageobjects.locators.OnixLocator;
 import org.openqa.selenium.By;
 
 public class PricingPO extends BaseLogoutModePageObject {

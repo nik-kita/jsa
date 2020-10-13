@@ -1,7 +1,7 @@
 package pageobjects.login;
 
 import engine.OnixWebDriver;
-import locators.OnixLocator;
+import pageobjects.locators.OnixLocator;
 import org.openqa.selenium.By;
 import pageobjects.login.popups.PaymentMethodPopup;
 

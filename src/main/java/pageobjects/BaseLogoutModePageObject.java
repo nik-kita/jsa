@@ -1,7 +1,7 @@
 package pageobjects;
 
 import engine.OnixWebDriver;
-import locators.GeneralHeaderLocator;
+import pageobjects.locators.GeneralHeaderLocator;
 
 
 public class BaseLogoutModePageObject extends BasePageObject {

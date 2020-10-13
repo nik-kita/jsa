@@ -1,8 +1,8 @@
 package pageobjects.login;
 
 import engine.OnixWebDriver;
-import locators.OnixLocator;
-import locators.login_mode.GeneralHeaderLoginModeLocator;
+import pageobjects.locators.OnixLocator;
+import pageobjects.locators.login_mode.GeneralHeaderLoginModeLocator;
 import org.openqa.selenium.By;
 
 public class HomeLoginModePO extends BaseLoginModePageObject {

@@ -1,6 +1,6 @@
 package ui;
 
-import locators.OnixLocator;
+import pageobjects.locators.OnixLocator;
 import engine.OnixWebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;

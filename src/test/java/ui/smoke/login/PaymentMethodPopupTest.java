@@ -1,6 +1,6 @@
 package ui.smoke.login;
 
-import locators.OnixLocator;
+import pageobjects.locators.OnixLocator;
 import org.testng.asserts.SoftAssert;
 import pageobjects.login.popups.PaymentMethodPopup;
 import org.testng.annotations.BeforeClass;

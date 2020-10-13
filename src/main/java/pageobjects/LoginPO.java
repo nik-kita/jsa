@@ -3,7 +3,7 @@ package pageobjects;
 import data.User;
 import engine.OnixWebDriver;
 import engine.OnixWebElement;
-import locators.OnixLocator;
+import pageobjects.locators.OnixLocator;
 import org.openqa.selenium.By;
 import pageobjects.login.HomeLoginModePO;
 

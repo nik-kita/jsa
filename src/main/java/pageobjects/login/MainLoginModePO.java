@@ -1,7 +1,7 @@
 package pageobjects.login;
 
 import engine.OnixWebDriver;
-import locators.login_mode.GeneralHeaderLoginModeLocator;
+import pageobjects.locators.login_mode.GeneralHeaderLoginModeLocator;
 
 public class MainLoginModePO extends BaseLoginModePageObject {
     public MainLoginModePO(OnixWebDriver driver) {

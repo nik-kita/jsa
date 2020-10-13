@@ -1,7 +1,7 @@
-package popups;
+package pageobjects.popups;
 
 import engine.OnixWebDriver;
-import locators.OnixLocator;
+import pageobjects.locators.OnixLocator;
 import org.openqa.selenium.By;
 
 public class JsaCookies {

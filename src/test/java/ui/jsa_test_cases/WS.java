@@ -1,7 +1,7 @@
 package ui.jsa_test_cases;
 
 import data.User;
-import locators.OnixLocator;
+import pageobjects.locators.OnixLocator;
 import pageobjects.login.popups.PaymentMethodPopup;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
