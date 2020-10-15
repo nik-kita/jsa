@@ -6,15 +6,18 @@ import org.openqa.selenium.By;
 import pageobjects.login.PricingPlansLoginModePO;
 
 public class PaymentMethodPopup {
-    OnixWebDriver driver;
+    public OnixWebDriver driver;
     String PAYPAL_IFRAME_NAME;
+
 
     public PaymentMethodPopup(OnixWebDriver driver) {
         this.driver = driver;
     }
 
     public PricingPlansLoginModePO exit() {
-        driver.findElement(Locator.EXIT_X_BUTTON).click();
+
+        driver.waitToClick(Locator.EXIT_X_BUTTON).click();
+        driver.waitInvisibilityOf(Locator.EXIT_X_BUTTON);
         return new PricingPlansLoginModePO(driver);
     }
 
@@ -46,7 +49,7 @@ public class PaymentMethodPopup {
 
 
     public enum Locator implements OnixLocator {
-        EXIT_X_BUTTON(By.xpath("(//button/span[contains(text(), '×')])[1]")),
+        EXIT_X_BUTTON(By.xpath("(//span[contains(text(), '×')])[1]")),
         PAY_PALL_TAB(By.id("nav-paypal-tab")),
         CARD_TAB(By.id("nav-card-tab")),
         PAY_WITH_CARD_BUTTON(By.xpath("//button[contains(text(), 'Pay with Card')]")),

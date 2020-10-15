@@ -12,7 +12,7 @@ public class ChallengeTest extends OnixTestRunner {
 
     @BeforeClass
     public void goChallengePage() {
-        welcome().goChallengePage();
+        openSite().goChallengePage();
     }
 
     @Test(dataProvider = "getChallengePageLocators")

@@ -10,9 +10,9 @@ public class BaseLoginModePageObject extends BasePageObject implements GeneralHe
     }
 
     @Override
-    public BasePageObject goMainPage() {
+    public MainLoginModePO goMainPage() {
         driver.findElement(HomeLoginModePO.Locator.JSA_LOGO).click();
-        return new HomeLoginModePO(driver);
+        return new MainLoginModePO(driver);
     }
 
     @Override

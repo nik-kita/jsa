@@ -10,6 +10,7 @@ import ui.OnixAssert;
 
 public class PaymentMethodPopupTest extends JsaLoginBaseTestRunner {
     PaymentMethodPopup paymentMethodPopup;
+
     @BeforeClass
     public void openPopup() {
         paymentMethodPopup = homeLoginModePO
@@ -21,11 +22,12 @@ public class PaymentMethodPopupTest extends JsaLoginBaseTestRunner {
 
     @Test(dataProvider = "getPaymentMethodCardLocators")
     public void paymentMethodCardTest(OnixLocator locator) {
-        if(!driver.isElementPresent(locator)) {
-            paymentMethodPopup.clickCardTab();
-        }
+
+        paymentMethodPopup.clickCardTab();
+
         new OnixAssert(driver).checkCountOfElementByLocator(locator, 1);
     }
+
     @DataProvider
     public Object[] getPaymentMethodCardLocators() {
         return PaymentMethodPopup.Locator.values();
@@ -37,7 +39,9 @@ public class PaymentMethodPopupTest extends JsaLoginBaseTestRunner {
         SoftAssert soft = new SoftAssert();
         new OnixAssert(driver).softCheckCountOfElementByLocator(locator, 1, soft);
         paymentMethodPopup = frame.clickCardTab();
+        soft.assertAll();
     }
+
     @DataProvider
     public Object[] getPaymentMethodPayPalLocators() {
         return PaymentMethodPopup.PayPalIframeLocator.values();

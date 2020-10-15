@@ -2,10 +2,11 @@ package business_logic;
 
 import business_logic.login.HomeUser;
 import data.User;
+import engine.OnixWebDriver;
 import pageobjects.MainPO;
 import pageobjects.login.HomeLoginModePO;
 
-public class MainGuest {
+public class MainGuest implements LogoutMode {
     MainPO mainPO;
 
     public MainGuest(MainPO mainPO) {
@@ -19,4 +20,8 @@ public class MainGuest {
         return new HomeUser(homeLoginModePO);
     }
 
+    @Override
+    public OnixWebDriver getDriver() {
+        return mainPO.getDriver();
+    }
 }

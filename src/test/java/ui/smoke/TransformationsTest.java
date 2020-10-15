@@ -11,7 +11,7 @@ import ui.OnixTestRunner;
 public class TransformationsTest extends OnixTestRunner {
     @BeforeClass
     public void goTransformationsPage() {
-        welcome().goTransformationsPage();
+        openSite().goTransformationsPage();
     }
 
     @Test(dataProvider = "getTransformationsLocators")

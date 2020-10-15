@@ -101,19 +101,19 @@ public class OnixWebDriver {
                 .executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 
-    public void scrollUp() {
+    public void scrollPageUp() {
         ((JavascriptExecutor) driver)
-                .executeScript("window.scrollTo(0, -document.body.scrollHeight)");
+                .executeScript("window.scrollTo(0, 0)");
     }
 
     public void scrollTo(OnixLocator locator) {
         ((JavascriptExecutor) driver)
-                .executeScript("arguments[0].scrollIntoView(true);", findElement(locator));
+                .executeScript("arguments[0].scrollIntoView(true);", findElement(locator).getSeleniumWebElement());
     }
 
     public void scrollTo(By seleniumPath) {
         ((JavascriptExecutor) driver)
-                .executeScript("arguments[0].scrollIntoView(true);", findElement(seleniumPath));
+                .executeScript("arguments[0].scrollIntoView(true);", findElement(seleniumPath).getSeleniumWebElement());
     }
 
     public void scrollTo(OnixWebElement element) {
@@ -154,4 +154,14 @@ public class OnixWebDriver {
         return findElements(locator).size() > 0;
     }
 
+    public boolean waitInvisibilityOf(OnixLocator locator) {
+        return new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.invisibilityOfElementLocated(locator.getPath()));
+    }
+
+    public OnixWebElement waitToClick(OnixLocator locator) {
+        WebElement e = new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.elementToBeClickable(locator.getPath()));
+        return new OnixWebElement(e);
+    }
 }

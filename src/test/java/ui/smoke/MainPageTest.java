@@ -13,12 +13,12 @@ public class MainPageTest extends OnixTestRunner {
 
     @BeforeClass
     public void goHomePage() {
-        welcome();
+        openSite();
     }
 
     @Test(dataProvider = "getGeneralHeaderLocators")
     public void generalHeaderTest(OnixLocator locator) {
-        welcome();
+        openSite();
         new OnixAssert(getDriver()).
                 checkCountOfElementByLocator(locator, 1);
     }

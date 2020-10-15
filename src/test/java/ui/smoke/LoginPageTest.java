@@ -11,7 +11,7 @@ import ui.OnixTestRunner;
 public class LoginPageTest extends OnixTestRunner {
     @BeforeClass
     public void goLoginPage() {
-        welcome().goLoginPage();
+        openSite().goLoginPage();
     }
 
     @Test(dataProvider = "getLoginPageLocators")

@@ -12,7 +12,7 @@ public class PricingTest extends OnixTestRunner {
 
     @BeforeClass
     public void goPricingPage() {
-        welcome().goPricingPage();
+        openSite().goPricingPage();
     }
 
     @Test(dataProvider = "getPricingLocators")

@@ -10,7 +10,7 @@ public class JsaLoginBaseTestRunner extends OnixTestRunner {
 
     @BeforeClass
     public void loginWelcome() {
-        welcome();
+        openSite();
         homeLoginModePO = new RouteHacks(driver).login();
     }
 }

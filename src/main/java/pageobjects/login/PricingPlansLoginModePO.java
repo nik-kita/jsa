@@ -3,11 +3,20 @@ package pageobjects.login;
 import engine.OnixWebDriver;
 import pageobjects.locators.OnixLocator;
 import org.openqa.selenium.By;
+import pageobjects.locators.login_mode.GeneralHeaderLoginModeLocator;
 import pageobjects.login.popups.PaymentMethodPopup;
 
 public class PricingPlansLoginModePO extends BaseLoginModePageObject {
     public PricingPlansLoginModePO(OnixWebDriver driver) {
         super(driver);
+//        try {
+//            Thread.sleep(4000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        if(driver.findElements(PricingPlansLoginModePO.BlocksTabLocator.BUY_NOW_BUTTON).size() > 0) {
+//            this.clickSubscriptionsButton();
+//        }
     }
 
     public HomeLoginModePO goHome() {
@@ -23,8 +32,20 @@ public class PricingPlansLoginModePO extends BaseLoginModePageObject {
         driver.findElement(Locator.SUBSCRIBE_BTN_PREMIUM_PLAN).click();
         return new PaymentMethodPopup(driver);
     }
+
+    public PaymentMethodPopup buyNow() {
+        clickBlocksButton();
+        driver.findElement(BlocksTabLocator.BUY_NOW_BUTTON).click();
+        return new PaymentMethodPopup(driver);
+    }
     public PricingPlansLoginModePO clickBlocksButton() {
+        driver.scrollPageUp();
         driver.findElement(Locator.BLOCKS_BUTTON).click();
+        return this;
+    }
+
+    public PricingPlansLoginModePO clickSubscriptionsButton() {
+        driver.findElement(Locator.SUBSCRIPTIONS_BUTTON).click();
         return this;
     }
 
@@ -45,6 +66,22 @@ public class PricingPlansLoginModePO extends BaseLoginModePageObject {
         private By path;
 
         Locator(By path) {
+            this.path = path;
+        }
+        @Override
+        public By getPath() {
+            return path;
+        }
+
+    }
+    public enum BlocksTabLocator implements OnixLocator {
+        BUY_NOW_BUTTON(By.cssSelector("#premiumBlockButton")),
+
+        ;
+
+        private By path;
+
+        BlocksTabLocator(By path) {
             this.path = path;
         }
         @Override

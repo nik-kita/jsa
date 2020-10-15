@@ -1,12 +1,18 @@
 package pageobjects.login;
 
 import engine.OnixWebDriver;
+import pageobjects.MainPO;
 import pageobjects.locators.OnixLocator;
 import org.openqa.selenium.By;
 
 public class UserCabinetDropdownPO extends BaseLoginModePageObject {
     public UserCabinetDropdownPO(OnixWebDriver driver) {
         super(driver);
+    }
+
+    public MainPO logout() {
+        driver.findElement(Locator.LOG_OUT).click();
+        return new MainPO(driver);
     }
 
 

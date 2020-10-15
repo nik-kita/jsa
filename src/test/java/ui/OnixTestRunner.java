@@ -1,5 +1,6 @@
 package ui;
 
+import business_logic.BaseMode;
 import engine.OnixWebDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -11,12 +12,9 @@ import pageobjects.MainPO;
 import java.util.concurrent.TimeUnit;
 
 public class OnixTestRunner {
-    protected MainPO mainPO;
-
     public OnixWebDriver driver;
-//    String baseUrl = "http://127.0.0.1:8000/";
-    String baseUrl = "https://www.jamessmithacademy.com/";
-//    String baseUrl = "https://testing-jamessmith-academy.herokuapp.com/";
+    protected MainPO mainPO;
+    String baseUrl = BaseMode.baseUrl;
 
     public OnixWebDriver getDriver() {
         return driver;
@@ -36,7 +34,7 @@ public class OnixTestRunner {
         driver.quit();
     }
 
-    protected MainPO welcome() {
+    protected MainPO openSite() {
         driver.get(baseUrl);
         mainPO = new MainPO(driver);
         return mainPO;

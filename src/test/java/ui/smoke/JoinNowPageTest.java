@@ -11,7 +11,7 @@ import ui.OnixTestRunner;
 public class JoinNowPageTest extends OnixTestRunner {
     @BeforeClass
     public void goJoinNowPage() {
-        welcome().goJoinNowPage();
+        openSite().goJoinNowPage();
     }
 
     @Test(dataProvider = "getJoinNowLocators")

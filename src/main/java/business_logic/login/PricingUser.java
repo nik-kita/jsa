@@ -17,6 +17,10 @@ public class PricingUser implements LoginMode {
         return new PricingUser(new PricingLoginModePO(po.getDriver()));
     }
 
+    public PricingPlans subscribe() {
+        return new PricingPlans(pricingLoginModePO.goPricingPlans());
+    }
+
     @Override
     public OnixWebDriver getDriver() {
         return pricingLoginModePO.getDriver();

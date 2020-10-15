@@ -8,13 +8,14 @@ public class HomeUser implements LoginMode {
     HomeLoginModePO homeLoginModePO;
     static String endPoit = "users/#/home";
 
+    public HomeUser(HomeLoginModePO homeLoginModePO) {
+        this.homeLoginModePO = homeLoginModePO;
+    }
+
     public static HomeUser quickGet(LoginMode po) {
         OnixWebDriver driver = po.getDriver();
         driver.get(baseUrl + endPoit);
         return new HomeUser(new HomeLoginModePO(driver));
-    }
-    public HomeUser(HomeLoginModePO homeLoginModePO) {
-        this.homeLoginModePO = homeLoginModePO;
     }
 
     public MainUser goMainUser() {
