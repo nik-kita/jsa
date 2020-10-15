@@ -2,7 +2,6 @@ package pageobjects.login;
 
 import engine.OnixWebDriver;
 import pageobjects.locators.OnixLocator;
-import pageobjects.locators.login_mode.GeneralHeaderLoginModeLocator;
 import org.openqa.selenium.By;
 
 public class HomeLoginModePO extends BaseLoginModePageObject {
@@ -16,7 +15,7 @@ public class HomeLoginModePO extends BaseLoginModePageObject {
     }
 
     public MainLoginModePO goMainPage() {
-        driver.findElement(GeneralHeaderLoginModeLocator.JSA_LOGO).click();
+        driver.findElement(HeaderLocator.JSA_LOGO).click();
         return new MainLoginModePO(driver);
     }
 

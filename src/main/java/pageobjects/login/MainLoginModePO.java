@@ -1,7 +1,6 @@
 package pageobjects.login;
 
 import engine.OnixWebDriver;
-import pageobjects.locators.login_mode.GeneralHeaderLoginModeLocator;
 
 public class MainLoginModePO extends BaseLoginModePageObject {
     public MainLoginModePO(OnixWebDriver driver) {
@@ -9,7 +8,7 @@ public class MainLoginModePO extends BaseLoginModePageObject {
     }
 
     public HomeLoginModePO goHome() {
-        driver.findElement(GeneralHeaderLoginModeLocator.TO_USER_HOME_CORNER_LINK).click();
+        driver.findElement(HeaderLocator.TO_USER_HOME_CORNER_LINK).click();
         return new HomeLoginModePO(driver);
     }
 

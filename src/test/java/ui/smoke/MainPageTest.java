@@ -1,7 +1,6 @@
 package ui.smoke;
 
 import pageobjects.locators.GeneralFooterLocator;
-import pageobjects.locators.GeneralHeaderLocator;
 import pageobjects.locators.OnixLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -26,7 +25,7 @@ public class MainPageTest extends OnixTestRunner {
 
     @DataProvider
     public Object[] getGeneralHeaderLocators() {
-        return GeneralHeaderLocator.values();
+        return MainPO.HeaderLocator.values();
     }
 
     @Test(dataProvider = "getMainPageLocators")
@@ -48,6 +47,6 @@ public class MainPageTest extends OnixTestRunner {
 
     @DataProvider
     public Object[] getGeneralFooterLocators() {
-        return GeneralFooterLocator.values();
+        return GeneralFooterLocator.FooterLocator.values();
     }
 }

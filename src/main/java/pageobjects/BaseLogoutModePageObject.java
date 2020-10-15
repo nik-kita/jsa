@@ -1,22 +1,22 @@
 package pageobjects;
 
 import engine.OnixWebDriver;
-import pageobjects.locators.GeneralHeaderLocator;
+import pageobjects.locators.logout_mode.GeneralHeaderLogoutModeLocator;
 
 
-public class BaseLogoutModePageObject extends BasePageObject {
+public class BaseLogoutModePageObject extends BasePageObject implements GeneralHeaderLogoutModeLocator {
     public BaseLogoutModePageObject(OnixWebDriver driver) {
         super(driver);
     }
 
     @Override
     public BasePageObject goMainPage() {
-        driver.findElement(GeneralHeaderLocator.JSA_LOGO).click();
+        driver.findElement(HeaderLocator.JSA_LOGO).click();
         return new MainPO(driver);
     }
 
     public ChallengePO goChallengePage() {
-        driver.findElement(GeneralHeaderLocator.CHALLENGE_HEADER_BUTTON).
+        driver.findElement(HeaderLocator.CHALLENGE_HEADER_BUTTON).
                 click();
 
         return new ChallengePO(driver);
@@ -24,13 +24,13 @@ public class BaseLogoutModePageObject extends BasePageObject {
 
     @Override
     public PricingPO goPricingPage() {
-        driver.findElement(GeneralHeaderLocator.PRICING_HEADER_BUTTON).
+        driver.findElement(HeaderLocator.PRICING_HEADER_BUTTON).
                 click();
         return new PricingPO(driver);
     }
 
     public TransformationsPO goTransformationsPage() {
-        driver.findElement(GeneralHeaderLocator.TRANSFORMATIONS_HEADER_BUTTON).
+        driver.findElement(HeaderLocator.TRANSFORMATIONS_HEADER_BUTTON).
                 click();
         return new TransformationsPO(driver);
     }
@@ -40,12 +40,12 @@ public class BaseLogoutModePageObject extends BasePageObject {
 
 
     public LoginPO goLoginPage() {
-        driver.findElement(GeneralHeaderLocator.LOGIN_HEADER_BUTTON).click();
+        driver.findElement(HeaderLocator.LOGIN_HEADER_BUTTON).click();
         return new LoginPO(driver);
     }
 
     public JoinNowPO goJoinNowPage() {
-        driver.findElement(GeneralHeaderLocator.JOIN_NOW_HEADER_BUTTON).click();
+        driver.findElement(HeaderLocator.JOIN_NOW_HEADER_BUTTON).click();
         return new JoinNowPO(driver);
     }
 }

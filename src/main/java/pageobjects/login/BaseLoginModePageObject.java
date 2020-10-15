@@ -1,10 +1,10 @@
 package pageobjects.login;
 
 import engine.OnixWebDriver;
-import pageobjects.locators.login_mode.GeneralHeaderLoginModeLocator;
 import pageobjects.BasePageObject;
+import pageobjects.locators.login_mode.GeneralHeaderLoginModeLocator;
 
-public class BaseLoginModePageObject extends BasePageObject {
+public class BaseLoginModePageObject extends BasePageObject implements GeneralHeaderLoginModeLocator {
     public BaseLoginModePageObject(OnixWebDriver driver) {
         super(driver);
     }
@@ -17,7 +17,7 @@ public class BaseLoginModePageObject extends BasePageObject {
 
     @Override
     public PricingLoginModePO goPricingPage() {
-        driver.findElement(GeneralHeaderLoginModeLocator.PRICING_HEADER_BUTTON).click();
+        driver.findElement(HeaderLocator.PRICING_HEADER_BUTTON).click();
         return new PricingLoginModePO(driver);
     }
 
