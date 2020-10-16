@@ -20,6 +20,11 @@ public class MainGuest implements LogoutMode {
         return new HomeUser(homeLoginModePO);
     }
 
+    public Transformations goTransformations() {
+        return new Transformations(mainPO.goTransformationsPage());
+
+    }
+
     @Override
     public OnixWebDriver getDriver() {
         return mainPO.getDriver();

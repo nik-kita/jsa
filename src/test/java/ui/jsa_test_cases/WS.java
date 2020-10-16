@@ -1,8 +1,10 @@
 package ui.jsa_test_cases;
 
 import business_logic.MainGuest;
+import business_logic.Transformations;
 import business_logic.login.PaymentMethod;
 import data.User;
+import org.junit.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -51,6 +53,18 @@ public class WS extends OnixTestRunner {
         softAssert.assertAll();
     }
 
-
-
+    @Test
+    public void seeMoreButtonOnTransformationPage() {
+        Transformations transformations = mainGuest
+                .goTransformations();
+        SoftAssert softAssert = new SoftAssert();
+        int before = Integer.MIN_VALUE;
+        while(transformations.seeMore()) {
+            int current = transformations.transformationsCount();
+            softAssert = new OnixAssert(driver).softCheckFirstGreaterSecond(current, before, softAssert);
+            System.out.println(before + "  " + current);
+            before = current;
+        }
+        softAssert.assertAll();
+    }
 }
