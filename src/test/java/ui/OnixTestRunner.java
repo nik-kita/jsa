@@ -9,7 +9,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pageobjects.MainPO;
 
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Stream;
 
 public class OnixTestRunner {
     public OnixWebDriver driver;
@@ -38,5 +40,21 @@ public class OnixTestRunner {
         driver.get(baseUrl);
         mainPO = new MainPO(driver);
         return mainPO;
+    }
+
+    public Object[] mergeArrays(Object[]...arrays) {
+        int length = 0;
+        for (Object[] array : arrays) {
+            length += array.length;
+        }
+        Object[] result = new Object[length];
+        int pos = 0;
+        for (Object[] array : arrays) {
+            for (Object e : array) {
+                result[pos] = e;
+                pos++;
+            }
+        }
+        return result;
     }
 }
