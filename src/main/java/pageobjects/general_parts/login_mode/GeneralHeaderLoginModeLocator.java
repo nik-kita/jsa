@@ -1,9 +1,11 @@
 package pageobjects.general_parts.login_mode;
 
+import engine.OnixWebDriver;
 import org.openqa.selenium.By;
 import pageobjects.general_parts.OnixLocator;
 
 public interface GeneralHeaderLoginModeLocator {
+    OnixWebDriver getDriver();
     enum HeaderLocator implements OnixLocator {
         JSA_LOGO(By.cssSelector("a[href='/'] img")),
         BOOK_LOGO(By.cssSelector(".nav a[href='/not-a-diet-book/'] img")),//TODO there are two books logos on this locator

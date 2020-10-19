@@ -10,7 +10,7 @@ public class BaseLogoutModePageObject extends BasePageObject implements GeneralH
     }
 
     @Override
-    public BasePageObject goMainPage() {
+    public MainPO goMainPage() {
         driver.findElement(HeaderLocator.JSA_LOGO).click();
         return new MainPO(driver);
     }

@@ -1,9 +1,11 @@
 package pageobjects.general_parts.logout_mode;
 
+import engine.OnixWebDriver;
 import org.openqa.selenium.By;
 import pageobjects.general_parts.OnixLocator;
 
 public interface GeneralHeaderLogoutModeLocator {
+    OnixWebDriver getDriver();
     enum HeaderLocator implements OnixLocator {
         JSA_LOGO(By.cssSelector("a[href='/'] img")),
 

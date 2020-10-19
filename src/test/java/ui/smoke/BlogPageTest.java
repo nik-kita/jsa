@@ -15,7 +15,7 @@ public class BlogPageTest extends OnixTestRunner {
     BlogPO blogPO;
     @BeforeClass
     public void goBlockPage() {
-        blogPO = openSite().goBlogPageFromFooter(driver);
+        blogPO = openSite().goBlogPageFromFooter();
     }
 
     @Test(dataProvider = "getBlogPageLocators")

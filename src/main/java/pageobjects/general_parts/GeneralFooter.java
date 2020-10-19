@@ -5,10 +5,13 @@ import org.openqa.selenium.By;
 import pageobjects.BlogPO;
 
 public interface GeneralFooter {
-    default BlogPO goBlogPageFromFooter(OnixWebDriver driver) {
+    default BlogPO goBlogPageFromFooter() {
+        OnixWebDriver driver = getDriver();
         driver.findElement(FooterLocator.BLOG_SUPPORT_LINK).click();
         return new BlogPO(driver);
     }
+
+    OnixWebDriver getDriver();
 
     enum FooterLocator implements OnixLocator {
         JSA_LOGO(By.cssSelector("footer .logo")),

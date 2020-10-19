@@ -1,5 +1,6 @@
 package ui.jsa_test_cases;
 
+import business_logic.Blog;
 import business_logic.MainGuest;
 import business_logic.Transformations;
 import business_logic.login.PaymentMethod;
@@ -7,6 +8,7 @@ import data.User;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import pageobjects.BlogPO;
 import pageobjects.general_parts.OnixLocator;
 import pageobjects.login.popups.PaymentMethodPopup;
 import ui.OnixAssert;
@@ -64,7 +66,22 @@ public class WS extends OnixTestRunner {
             System.out.println(before + "  " + current);
             before = current;
         }
+        mainGuest = transformations.goMainGuest();
         softAssert.assertAll();
+    }
+
+    @Test(testName = "Blog (WS)")
+    public void checkTotalNumberOfPostsOnAllBlogTabs() {
+        Blog blog = mainGuest.goBlog();
+        int total = blog.blogPO.countPosts();
+        int fromEveryTab = 0;
+        for(OnixLocator locator : BlogPO.Locator.values()) {
+            driver.findElement(locator).click();
+            fromEveryTab += blog.blogPO.countPosts();
+        }
+        fromEveryTab -= total;
+        mainGuest = blog.goMainGuest();
+        new OnixAssert(driver).checkCount(total, fromEveryTab);
     }
 
 

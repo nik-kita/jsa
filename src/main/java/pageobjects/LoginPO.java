@@ -46,6 +46,33 @@ public class LoginPO extends BaseLogoutModePageObject {
         return new HomeLoginModePO(driver);
     }
 
+    public HomeLoginModePO loginByFB(User user) {
+        driver.findElement(Locator.FACEBOOK_BUTTON).click();
+        return new FB(driver)
+                .login(user.getFacebookEmail(), user.getFacebookPassword());
+    }
+
+    private class FB {
+        OnixWebDriver driver;
+        public FB(OnixWebDriver driver) {
+            this.driver = driver;
+        }
+        OnixLocator emailOrNumberInput = OnixLocator.makeOnixLocator(By.xpath("//input[@id='email']"));
+        OnixLocator passwordInput = OnixLocator.makeOnixLocator(By.xpath("//input[@type='password']"));
+        OnixLocator enterButton = OnixLocator.makeOnixLocator(By.cssSelector("#loginbutton"));
+        OnixLocator confirmButton = OnixLocator.makeOnixLocator(By.xpath("//button[@name='__CONFIRM__']"));
+
+        public HomeLoginModePO login(String name, String password) {
+            driver.findElement(emailOrNumberInput).sendKeys(name);
+            driver.findElement(passwordInput).sendKeys(password);
+            driver.findElement(enterButton).click();
+            if(driver.isElementPresent(confirmButton)) {
+                driver.waitToClick(confirmButton).click();
+            }
+            return new HomeLoginModePO(driver);
+        }
+    }
+
 
 
     public enum Locator implements OnixLocator {

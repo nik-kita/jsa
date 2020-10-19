@@ -25,6 +25,10 @@ public class MainGuest implements LogoutMode {
 
     }
 
+    public Blog goBlog() {
+        return new Blog(mainPO.goBlogPageFromFooter());
+    }
+
     @Override
     public OnixWebDriver getDriver() {
         return mainPO.getDriver();
