@@ -1,13 +1,21 @@
-package pageobjects.locators;
+package pageobjects.general_parts;
 
+import engine.OnixWebDriver;
 import org.openqa.selenium.By;
+import pageobjects.BlogPO;
 
-public interface GeneralFooterLocator {
-    public enum FooterLocator implements OnixLocator {
+public interface GeneralFooter {
+    default BlogPO goBlogPageFromFooter(OnixWebDriver driver) {
+        driver.findElement(FooterLocator.BLOG_SUPPORT_LINK).click();
+        return new BlogPO(driver);
+    }
+
+    enum FooterLocator implements OnixLocator {
         JSA_LOGO(By.cssSelector("footer .logo")),
         TERMS_OF_SERVICE_LINK(By.cssSelector(".company [href='/terms/']")),
         COOKIES_POLICY_LINK(By.cssSelector(".company [href='/cookies-policy/']")),
         PRIVACY_POLICY_LINK(By.cssSelector(".company [href='/privacy/']")),
+        BLOG_SUPPORT_LINK(By.xpath("//footer//div[@class='support']//a[contains(text(), 'Blog')]")),
         BUG_SUPPORT_LINK(By.cssSelector(".support [href='/emails/bug-report/']")),
         CONTACT_US_LINK(By.cssSelector(".support [href='/emails/contact-us/']")),
         ACCESS_LINK(By.cssSelector(".support [href='/access/']")),

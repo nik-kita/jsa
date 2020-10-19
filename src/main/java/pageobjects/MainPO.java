@@ -1,7 +1,7 @@
 package pageobjects;
 
 import engine.OnixWebDriver;
-import pageobjects.locators.OnixLocator;
+import pageobjects.general_parts.OnixLocator;
 import org.openqa.selenium.By;
 import pageobjects.popups.JsaCookies;
 

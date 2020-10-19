@@ -2,7 +2,7 @@ package pageobjects.login;
 
 import engine.OnixWebDriver;
 import pageobjects.MainPO;
-import pageobjects.locators.OnixLocator;
+import pageobjects.general_parts.OnixLocator;
 import org.openqa.selenium.By;
 
 public class UserCabinetDropdownPO extends BaseLoginModePageObject {

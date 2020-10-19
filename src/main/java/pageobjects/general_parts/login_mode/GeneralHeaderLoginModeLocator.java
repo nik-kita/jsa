@@ -1,18 +1,17 @@
-package pageobjects.locators.logout_mode;
+package pageobjects.general_parts.login_mode;
 
 import org.openqa.selenium.By;
-import pageobjects.locators.OnixLocator;
+import pageobjects.general_parts.OnixLocator;
 
-public interface GeneralHeaderLogoutModeLocator {
+public interface GeneralHeaderLoginModeLocator {
     enum HeaderLocator implements OnixLocator {
         JSA_LOGO(By.cssSelector("a[href='/'] img")),
-
+        BOOK_LOGO(By.cssSelector(".nav a[href='/not-a-diet-book/'] img")),//TODO there are two books logos on this locator
         PRICING_HEADER_BUTTON(By.cssSelector(".nav a[href='/pricing/']")),
         TRANSFORMATIONS_HEADER_BUTTON(By.cssSelector(".nav a[href='/transformations/']")),
         CHALLENGE_HEADER_BUTTON(By.cssSelector(".nav a[href='/challenge/about/']")),
-        LOGIN_HEADER_BUTTON(By.cssSelector(".nav a[href='/users/login/']")),
-        JOIN_NOW_HEADER_BUTTON(By.cssSelector(".nav a[href='/users/register/']")),
 
+        TO_USER_HOME_CORNER_LINK(By.cssSelector("[href='/users/']")),
 
 
         ;
@@ -28,5 +27,4 @@ public interface GeneralHeaderLogoutModeLocator {
             return path;
         }
     }
-
 }

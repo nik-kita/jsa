@@ -1,6 +1,6 @@
 package ui.smoke.login;
 
-import pageobjects.locators.OnixLocator;
+import pageobjects.general_parts.OnixLocator;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pageobjects.login.HomeLoginModePO;

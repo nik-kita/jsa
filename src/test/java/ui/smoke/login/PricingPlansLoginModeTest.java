@@ -1,7 +1,7 @@
 package ui.smoke.login;
 
 import org.testng.asserts.SoftAssert;
-import pageobjects.locators.OnixLocator;
+import pageobjects.general_parts.OnixLocator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

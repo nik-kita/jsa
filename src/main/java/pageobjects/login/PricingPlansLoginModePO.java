@@ -1,9 +1,8 @@
 package pageobjects.login;
 
 import engine.OnixWebDriver;
-import pageobjects.locators.OnixLocator;
+import pageobjects.general_parts.OnixLocator;
 import org.openqa.selenium.By;
-import pageobjects.locators.login_mode.GeneralHeaderLoginModeLocator;
 import pageobjects.login.popups.PaymentMethodPopup;
 
 public class PricingPlansLoginModePO extends BaseLoginModePageObject {

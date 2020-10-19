@@ -1,9 +1,9 @@
 package pageobjects;
 
 import engine.OnixWebDriver;
-import pageobjects.locators.GeneralFooterLocator;
+import pageobjects.general_parts.GeneralFooter;
 
-public abstract class BasePageObject implements GeneralFooterLocator {
+public abstract class BasePageObject implements GeneralFooter {
     protected OnixWebDriver driver;
 
     public BasePageObject(OnixWebDriver driver) {

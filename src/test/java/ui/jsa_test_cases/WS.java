@@ -4,11 +4,10 @@ import business_logic.MainGuest;
 import business_logic.Transformations;
 import business_logic.login.PaymentMethod;
 import data.User;
-import org.junit.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pageobjects.locators.OnixLocator;
+import pageobjects.general_parts.OnixLocator;
 import pageobjects.login.popups.PaymentMethodPopup;
 import ui.OnixAssert;
 import ui.OnixTestRunner;
@@ -53,7 +52,7 @@ public class WS extends OnixTestRunner {
         softAssert.assertAll();
     }
 
-    @Test
+    @Test(testName = "Transformations (WS)")
     public void seeMoreButtonOnTransformationPage() {
         Transformations transformations = mainGuest
                 .goTransformations();
@@ -67,4 +66,6 @@ public class WS extends OnixTestRunner {
         }
         softAssert.assertAll();
     }
+
+
 }

@@ -1,7 +1,7 @@
 package pageobjects;
 
 import engine.OnixWebDriver;
-import pageobjects.locators.logout_mode.GeneralHeaderLogoutModeLocator;
+import pageobjects.general_parts.logout_mode.GeneralHeaderLogoutModeLocator;
 
 
 public class BaseLogoutModePageObject extends BasePageObject implements GeneralHeaderLogoutModeLocator {
