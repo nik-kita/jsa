@@ -4,9 +4,15 @@ import engine.OnixWebDriver;
 import pageobjects.general_parts.OnixLocator;
 import org.openqa.selenium.By;
 
-public class JoinNowPO extends BaseLogoutModePageObject {
+public class JoinNowPO  {
+    OnixWebDriver driver;
     public JoinNowPO(OnixWebDriver driver) {
-        super(driver);
+        this.driver = driver;
+    }
+
+    public MainPO goMainPage() {
+        driver.findElement(Locator.JSA_LOGO).click();
+        return new MainPO(driver);
     }
 
     public enum Locator implements OnixLocator {

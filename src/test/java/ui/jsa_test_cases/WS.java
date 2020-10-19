@@ -3,13 +3,17 @@ package ui.jsa_test_cases;
 import business_logic.Blog;
 import business_logic.MainGuest;
 import business_logic.Transformations;
+import business_logic.login.HomeUser;
 import business_logic.login.PaymentMethod;
 import data.User;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pageobjects.BlogPO;
+import pageobjects.JoinNowPO;
+import pageobjects.ResetPasswordPO;
 import pageobjects.general_parts.OnixLocator;
+import pageobjects.login.HomeLoginModePO;
 import pageobjects.login.popups.PaymentMethodPopup;
 import ui.OnixAssert;
 import ui.OnixTestRunner;
@@ -20,9 +24,6 @@ public class WS extends OnixTestRunner {
     public void startFromMainPage() {
         mainGuest = new MainGuest(openSite());
     }
-
-
-
 
     @Test(testName = "Pricing (WS)")
     public void test_2() {
@@ -82,6 +83,30 @@ public class WS extends OnixTestRunner {
         fromEveryTab -= total;
         mainGuest = blog.goMainGuest();
         new OnixAssert(driver).checkCount(total, fromEveryTab);
+    }
+
+    @Test(testName = "Login (WS)")
+    public void checkLoginPageFunctionality() {
+        SoftAssert softAssert = new SoftAssert();
+        HomeUser homeUser = mainGuest.login(User.getValidUser());
+        softAssert = new OnixAssert(driver)
+                .softCheckCountOfElementByLocator(HomeLoginModePO.Locator.MY_CABINET_DROPDOWN, 1, softAssert);
+        mainGuest = homeUser.logout();
+        ResetPasswordPO resetPasswordPO = mainGuest
+                .goLoginPage()
+                .clickForgotPassword();
+        softAssert = new OnixAssert(driver)
+                .softCheckCountOfElementByLocator(ResetPasswordPO.Locator.EMAIL_INPUT, 1, softAssert);
+        mainGuest = new MainGuest(resetPasswordPO.goMainPage());
+        homeUser = mainGuest.loginWithFB(User.getValidUser());
+        softAssert = new OnixAssert(driver)
+                .softCheckCountOfElementByLocator(HomeLoginModePO.Locator.MY_CABINET_DROPDOWN, 1, softAssert);
+        mainGuest = homeUser.logout();
+        JoinNowPO joinNowPO = mainGuest.goJoinNowPage();
+        softAssert = new OnixAssert(driver)
+                .softCheckCountOfElementByLocator(JoinNowPO.Locator.PRIVACY_POLICY_LINK, 1, softAssert);
+        mainGuest = new MainGuest(joinNowPO.goMainPage());
+        softAssert.assertAll();
     }
 
 

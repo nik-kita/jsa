@@ -12,6 +12,7 @@ public class UserCabinetDropdownPO extends BaseLoginModePageObject {
 
     public MainPO logout() {
         driver.findElement(Locator.LOG_OUT).click();
+        driver.findElement(HeaderLocator.JSA_LOGO).click();
         return new MainPO(driver);
     }
 

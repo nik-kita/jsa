@@ -69,6 +69,13 @@ public class LoginPO extends BaseLogoutModePageObject {
             if(driver.isElementPresent(confirmButton)) {
                 driver.waitToClick(confirmButton).click();
             }
+            OnixLocator firstCheckNameInput = OnixLocator.makeOnixLocator(By.xpath("//input[contains(@value, ' ')]"));
+            OnixLocator firstCheckTermsCheckbox = OnixLocator.makeOnixLocator(By.cssSelector(".checkbox #terms-styler"));
+            OnixLocator firstCheckCreateAccountButton = OnixLocator.makeOnixLocator(By.cssSelector("input[type='submit']"));
+            if(driver.isElementPresent(firstCheckNameInput)) {
+                driver.waitToClick(firstCheckTermsCheckbox).click();
+                driver.waitToClick(firstCheckCreateAccountButton).click();
+            }
             return new HomeLoginModePO(driver);
         }
     }
