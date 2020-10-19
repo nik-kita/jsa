@@ -73,6 +73,10 @@ public class LoginPO extends BaseLogoutModePageObject {
         }
     }
 
+    public ResetPasswordPO clickForgotPassword() {
+        driver.findElement(Locator.FORGOT_PASSWORD_LINK).click();
+        return new ResetPasswordPO(driver);
+    }
 
 
     public enum Locator implements OnixLocator {

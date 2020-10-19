@@ -28,13 +28,10 @@ public class OnixTestRunner {
     @BeforeClass
     public void settingDriver() {
         WebDriverManager.chromedriver().setup();
-        // Create object of HashMap Class
-        Map<String, Object> prefs = new HashMap<String, Object>();
+        Map<String, Object> prefs = new HashMap<>();
         // Set the notification setting it will override the default setting
         prefs.put("profile.default_content_setting_values.notifications", 2);
-        // Create object of ChromeOption class
         ChromeOptions options = new ChromeOptions();
-        // Set the experimental option
         options.setExperimentalOption("prefs", prefs);
         // pass the options object in Chrome driver
         WebDriver chrome = new ChromeDriver(options);
